@@ -1,0 +1,38 @@
+.bg-pink {
+    background-color: #e20074!important;
+}
+
+.bg-gray {
+    background-color: #262626!important;
+}
+
+body {
+    font-size: large;
+    font-family: TeleNeoWeb-Regular, sans-serif!important;
+}
+
+.focus:hover {
+    text-decoration: underline;
+}
+
+.c-white {
+    color: white;
+}
+
+.c-white:hover {
+    color: black;
+}
+
+.i-lg:hover {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+.ml-50 {
+    margin-left: 30px;
+}
+
+.fs-7 {
+    font-size: 14px;
+}
