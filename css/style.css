@@ -59,12 +59,10 @@ body {
     background-size: cover;
 }
 
-.px-10 {
-    padding-right: 10rem!important;
-    padding-left: 10rem!important;
+.btn-visible:hover {
+    visibility: visible !important;
 }
 
-.mx-10 {
-    margin-right: 10rem!important;
-    margin-left: 10rem!important;
+.ff-b {
+    font-family: auto;
 }
