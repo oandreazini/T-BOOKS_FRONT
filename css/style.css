@@ -2,6 +2,10 @@
     background-color: #e20074!important;
 }
 
+.text-pink {
+    color: #e20074!important;
+}
+
 .bg-gray {
     background-color: #262626!important;
 }
@@ -35,4 +39,32 @@ body {
 
 .fs-7 {
     font-size: 14px;
+}
+
+.btn-pink {
+    color: #fff;
+    background-color: #e20074;
+    border-color: #e20074;
+}
+
+.btn-pink:hover {
+    color: #e20074;
+    background-color: #fff;
+    border-color: #e20074;
+}
+
+.bg-form {
+    background-image: url(/img/vecteezy_abstract-modern-white-and-grey-background-texture_6051267.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.px-10 {
+    padding-right: 10rem!important;
+    padding-left: 10rem!important;
+}
+
+.mx-10 {
+    margin-right: 10rem!important;
+    margin-left: 10rem!important;
 }
