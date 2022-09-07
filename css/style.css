@@ -54,15 +54,9 @@ body {
 }
 
 .bg-form {
-<<<<<<< HEAD
-  background-image: url(/img/vecteezy_abstract-modern-white-and-grey-background-texture_6051267.jpg);
+  background-image: url(../img/vecteezy_abstract-modern-white-and-grey-background-texture_6051267.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-=======
-    background-image: url(../img/vecteezy_abstract-modern-white-and-grey-background-texture_6051267.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
->>>>>>> 32b686e13b3109a24358a42640607cab1a86182b
 }
 
 .btn-visible:hover {
