@@ -1,68 +1,93 @@
 .bg-pink {
-    background-color: #e20074!important;
+  background-color: #e20074 !important;
 }
 
 .text-pink {
-    color: #e20074!important;
+  color: #e20074 !important;
 }
 
 .bg-gray {
-    background-color: #262626!important;
+  background-color: #262626 !important;
 }
 
 body {
-    font-size: large;
-    font-family: TeleNeoWeb-Regular, sans-serif!important;
+  font-size: large;
+  font-family: TeleNeoWeb-Regular, sans-serif !important;
 }
 
 .focus:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .c-white {
-    color: white;
+  color: white;
 }
 
 .c-white:hover {
-    color: black;
+  color: black;
 }
 
 .i-lg:hover {
-    font-size: 1.33333333em;
-    line-height: 0.75em;
-    vertical-align: -15%;
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
 }
 
 .ml-50 {
-    margin-left: 30px;
+  margin-left: 30px;
 }
 
 .fs-7 {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .btn-pink {
-    color: #fff;
-    background-color: #e20074;
-    border-color: #e20074;
+  color: #fff;
+  background-color: #e20074;
+  border-color: #e20074;
 }
 
 .btn-pink:hover {
-    color: #e20074;
-    background-color: #fff;
-    border-color: #e20074;
+  color: #e20074;
+  background-color: #fff;
+  border-color: #e20074;
 }
 
 .bg-form {
-    background-image: url(/img/vecteezy_abstract-modern-white-and-grey-background-texture_6051267.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url(/img/vecteezy_abstract-modern-white-and-grey-background-texture_6051267.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .btn-visible:hover {
-    visibility: visible !important;
+  visibility: visible !important;
 }
 
 .ff-b {
-    font-family: auto;
+  font-family: auto;
 }
+
+.ms-12 {
+  margin-left: 12%;
+}
+
+.page-item > a {
+  background: #e20074;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.page-item > a:hover {
+  color: #e20074;
+  background-color: #fff;
+  border-color: #e20074;
+  border-radius: 4px;
+}
+
+.page-item-selected > a {
+  color: #e20074;
+  background-color: #fff;
+  border-color: #e20074;
+  border-radius: 4px;
+}
+
