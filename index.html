@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div class="bg-form" id="app">
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light shadow bg-pink">
             <div class="container-fluid">
@@ -30,10 +30,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item mx-3 me-1">
-                            <a class="nav-link text-light lh-lg focus" href="#">Inicio</a>
+                            <a class="nav-link text-light lh-lg focus" href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light lh-lg focus" href="#">Libros</a>
+                            <a class="nav-link text-light lh-lg focus" href="books.html">Libros</a>
                         </li>
                     </ul>
 
@@ -52,8 +52,8 @@
                             </a>
 
                             <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Identifícate</a></li>
-                                <li><a class="dropdown-item" href="#">Regístrate</a></li>
+                                <li><a class="dropdown-item" href="logIn.html">Identifícate</a></li>
+                                <li><a class="dropdown-item" href="register.html">Regístrate</a></li>
                                 <li><a class="dropdown-item" href="#">Ayuda</a></li>
                             </ul>
                         </li>
@@ -65,10 +65,102 @@
         <!-- END NAVBAR -->
 
         <!-- CONTENT WEB -->
-        <div class="container my-md-4 bd-layout">
+        <div class="main">
+            <div class="jumbotron mb-5">
+                <!-- <img src="./img/t-books.png" alt="T-Books" width="130px"> --> 
+                <!-- <h1 class="bigTitle mx-5 my-3">Le damos la bienvenida a<br> T-BOOKS</h1>
+                <div>
+                    <p class="homeText mx-5">Somos una página de intercambio de libros de manera gratuita.
+                        Buscamos la reducción en el número de árboles talados cada día y el objetivo sostenible de reducir, reciclar y reutilizar los libros ya existentes.
+                        Con una simple acción puede ayudar a esta causa y además invitará a otras personas a la lectura verde.
+                    </p>
+                </div> -->
+                <a class="btn btn-pink btn-lg unete" href="register.html" role="button">¡Únete ya!</a>
+            </div>
 
+            <!-- <div>
+                <h2 class="mx-5 my-3">¿Sabías que cada día se tala una media de 42 millones de árboles?</h2>
+                <p class="mx-5">Eso son unos 500 árboles por segundo, algo totalmente insostenible. Utilizando la forma de intercambio 
+                    que proponemos ayudarás a los demás a beneficiarse de los hábitos de la lectura así como el 
+                    poder compartir las obras que te han hecho disfrutar al mismo tiempo que ayudas al medio ambiente. </p>
+            </div> -->
+            
+            
+            <!--Sobre nosotros-->
+            <div class="row mb-3">
+                <div class="col-2"></div>
+                <div class="col-8 ms-5">
+                    <h2 class="about">Sobre nosotros</h2>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-2"></div>
+                <div class="col-4 ms-5">
+                    <p>Somos el equipo 1, formado el día 5 de agosto del 2022. 
+                        Empezamos el proyecto con la planificación de la base de datos el 12 de agosto.</p>
+                </div>
+                <div class="col-6"></div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-6"></div>
+                <div class="col-4">
+                    <p>Seguidamente, cada semana fuimos haciendo tareas para este proyecto. 
+                        En una creamos la api usando Spring y la siguiente creamos la parte de seguridad dentro de la misma.</p>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-2"></div>
+                <div class="col-4 ms-5">
+                    <p>A partir de ahí ya pudimos empezar la parte frontal del proyecto, momento en el qual escribimos esto que estas leyendo.</p>
+                </div>
+                <div class="col-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-4">
+                    <p>Por último, realizamos la integración entre la parte trasera y frontal, 
+                        dando resultado al primer producto viable de todo el proyecto.</p>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            
+            
+            <!--Nuestro equipo-->
+            <div class="row mt-5 mb-3">
+                <div class="col-2"></div>
+                <div class="col-8 ms-5">
+                    <h3 class="nuestroEquipo">Nuestro equipo</h3>
+                </div>
+                <div class="col-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-2 ms-5">
+                    <i class="bi bi-person-square fa-5x"></i>
+                    <h3>Oriol</h3>
+                    <p>Finalizador</p>
+                    <i class="bi bi-linkedin ms-4"></i>
+                </div>
 
+                <div class="col-2 ms-5">
+                    <i class="bi bi-person-square fa-5x"></i>
+                    <h3>Bárbara</h3>
+                    <p>Finalizador</p>
+                    <i class="bi bi-linkedin ms-4"></i>
+                </div>
+
+                <div class="col-2 ms-5">
+                    <i class="bi bi-person-square fa-5x"></i>
+                    <h3>Roger</h3>
+                    <p>Finalizador</p>
+                    <i class="bi bi-linkedin ms-4"></i>
+                </div>
+                <div class="col-3"></div>
+            </div>
         </div>
+        
         <!-- END CONTENT WEB -->
 
         <!-- FOOTER -->
