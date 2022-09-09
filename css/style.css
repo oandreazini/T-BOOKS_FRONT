@@ -91,14 +91,9 @@ body {
     border-radius: 4px;
 }
 
-.h-580 {
-    height: 580px;
-}
-
 .jumbotron {
     padding: 2rem 1rem;
     background-image: url(/img/1720.jpg);
-    height: 550px;
     background-repeat: no-repeat;
     background-size: cover;
 }
