@@ -33,7 +33,7 @@
                             <a class="nav-link text-light lh-lg focus" href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light lh-lg focus" href="books.html">Libros</a>
+                            <a class="nav-link text-light lh-lg focus" href="#">Libros</a>
                         </li>
                     </ul>
 
@@ -48,119 +48,119 @@
 
                         <li class="nav-item dropdown ms-3">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <span class="navbar-toggler-icon"></span>
+                                <i class="bi bi-person-circle c-white fa-lg"></i>
                             </a>
 
                             <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="logIn.html">Identifícate</a></li>
-                                <li><a class="dropdown-item" href="register.html">Regístrate</a></li>
+                                <li><a class="dropdown-item" href="book_upload.html">Mis libros</a></li>
+                                <li><a class="dropdown-item" href="uploadBook.html">Subir libro</a></li>
+                                <li><a class="dropdown-item" href="settings.html">Ajustes</a></li>
                                 <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
                             </ul>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </nav>
         <!-- END NAVBAR -->
 
         <!-- CONTENT WEB -->
-        <div class="container my-md-4">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="row ms-5 mt-3">
-                        <div class="col-md-12">
+        <div class="container my-md-4 pb-5 mb-5">
+            <h2 class="pt-2">Propietario: Roger Rubio</h2>
+            <hr class="px-0 me-5">
+            <div class="row mt-4">
+                <div class="col-md-6 col-sm-12">
 
-                            <h3>Propietario: Roger Rubio</h3>
-                            <hr>
-                        </div>
-                    </div>
-
-                    <div class="row col-md-5 my-2 ms-5">
-                        <img src="https://covers.openlibrary.org/b/isbn/9780439362139-M.jpg" class="rounded float-start" alt="harry harry-potter-piedra-filosofal-minalima-portada">
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-7 ms-5 mt-2">
-                            <h4>Harry Potter y la piedra filosofal</h4>
-                        </div>
-                        <div class="col-md-5 mt-2">
-                            <hr class="mt-0 ms-5">
-                            <p class="ms-5 mb-1">J.K. Rowling</p>
-                            <p class="ms-5 mb-1">salamandra</p>
-                            <p class="ms-5">9780439362139</p>
-                        </div>
-                    </div>
-                    <div class="col-md-8 ms-5">
-                        <h4>Sinopsis</h4>
-                        <input type="text" class="form-control" style="height: 200px" value="Text">
-                    </div>
-                    <div class="col-md-5 me-1"></div>
-                    <div class="col-md-5 ms-5 mt-2">
-                        <a href="#" class="btn btn-pink">Pedir préstamo</a>
-                    </div>
+                    <img src="https://covers.openlibrary.org/b/isbn/9780439362139-L.jpg" alt="harry harry-potter-piedra-filosofal-minalima-portada">
                 </div>
 
-                <div class="col-md-5 my-4 bg-gray">
-                    <h3 class="text-light mt-5">Comentarios</h3>
-                    <hr class="mt-0 bg-white w-75">
-                    <div class="form-floating mt-2 mx-1">
-                        <input type="text" class="form-control" style="height: 500px" id="floatingInputGrid" value="Varios comentarios">
-                    </div>
+                <div class="col-md-6 col-sm-6">
+                    <p class="fs-4 mb-2">Harry Potter y la piedra filosofal</p>
+                    <hr class="mt-0 me-4">
+                    <p class="mb-1"><span class="fw-bold">Editorial:</span> salamandra</p>
+                    <p class="mb-1"><span class="fw-bold"> Autor:</span> J.K. Rowling</p>
+                    <p><span class="fw-bold"> ISBN:</span> 9780439362139</p>
+                    <span class="fw-bold"> Sinopsis:</span>
+                    <p>El día en que cumple once años, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. Deberá acudir entonces a una famosa escuela de magia y hechicería: Howards.</p>
 
-                    <form class="mt-5">
-                        <p class="classification bg-white mx-1">
-                            <input id="radio2" type="radio" name="stars" value="1">
-                            <i class="bi bi-star"></i>
-                            <input id="radio2" type="radio" name="stars" value="2">
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <input id="radio2" type="radio" name="stars" value="3">
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <input id="radio4" type="radio" name="stars" value="4">
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <input id="radio5" type="radio" name="stars" value="5">
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star"></i>
-                            <i class="bi bi-star "></i>
-                            <i class="bi bi-star "></i>
-                        </p>
-                        <div class="form-floating mx-1 mt-5">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px"></textarea>
-                            <label for="floatingTextarea2">Comentario</label>
-                        </div>
-                    </form>
+                    <a href="#" class="btn btn-pink mt-4">Pedir prestado</a>
                 </div>
             </div>
-        </div>
 
+            <h2 class="pt-2 mt-5">Comentarios</h2>
+            <hr class="px-0 me-5">
+
+            <div class="mb-5">
+                <p class="fw-bold mb-0">Nombre</p>
+                <p><i class="bi bi-star"></i><i class="bi bi-star"></i></p>
+                <p>Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha her</p>
+            </div>
+            <div>
+                <p class="fw-bold mb-0">Nombre</p>
+                <p><i class="bi bi-star"></i></p>
+                <p>Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha her</p>
+            </div>
+
+            <hr class="my-5">
+            <h3 class="mb-3">Escribe tu comentario</h3>
+            <form action="">
+                <input id="radio2" type="radio" name="stars" value="1" class="form-check-input form-check-pink">
+                <i class="bi bi-star"></i>
+                <input id="radio2" type="radio" class="ms-5 form-check-input form-check-pink" name="stars" value="2">
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <input id="radio2" type="radio" class="ms-5 form-check-input form-check-pink" name="stars" value="3">
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <input id="radio4" type="radio" class="ms-5 form-check-input form-check-pink" name="stars" value="4">
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <input id="radio5" type="radio" class="ms-5 form-check-input form-check-pink" name="stars" value="5">
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star "></i>
+                <i class="bi bi-star "></i>
+                <div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Escribe un comentario" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Escribe un comentario</label>
+                    </div>
+                </div>
+
+                <a href="#" class="btn btn-pink mt-4">Enviar valoración</a>
+            </form>
+        </div>
         <!-- END CONTENT WEB -->
 
         <!-- FOOTER -->
-        <footer class="py-3 px-5 mt-4 bg-gray">
-            <ul class="nav justify-content-center pb-3 mb-3">
-                <li class="nav-item"><a href="https://twitter.com/tsystemsCom" class="nav-link px-2 text-light"><i
-                        class="bi bi-twitter i-lg ml-50"></i></a></li>
-                <li class="nav-item"><a href="https://www.linkedin.com/company/t-systems/" class="nav-link px-2 text-light"><i class="bi bi-linkedin i-lg ml-50"></i></a></li>
-                <li class="nav-item"><a href="https://www.youtube.com/user/TSystemsINT" class="nav-link px-2 text-light"><i
-                        class="bi bi-youtube i-lg ml-50"></i></a></li>
+        <footer class=" py-3 px-5 mt-4 bg-gray ">
+            <ul class="nav justify-content-center pb-3 mb-3 ">
+                <li class="nav-item "><a href="https://twitter.com/tsystemsCom " class="nav-link px-2 text-light "><i
+                            class="bi bi-twitter i-lg ml-50 "></i></a></li>
+                <li class="nav-item "><a href="https://www.linkedin.com/company/t-systems/ " class="nav-link px-2 text-light "><i class="bi bi-linkedin i-lg ml-50 "></i></a></li>
+                <li class="nav-item "><a href="https://www.youtube.com/user/TSystemsINT " class="nav-link px-2 text-light "><i class="bi bi-youtube i-lg ml-50 "></i></a></li>
             </ul>
-            <hr class="bg-white">
-            <div class="pb-5">
-                <a href="https://www.t-systems.com/de/en"><img src="./img/logo-t-systems-white.svg-data.svg" alt="logo-t-systems-white" width="15%"></a>
-                <img src="./img/logo-t-systems-claim-white.svg-data.svg" alt="logo-t-systems-claim-white" width="15%" class="float-end">
+            <hr class="bg-white ">
+            <div class="pb-5 ">
+                <a href="https://www.t-systems.com/de/en "><img src="./img/logo-t-systems-white.svg-data.svg " alt="logo-t-systems-white " width="15% "></a>
+                <img src="./img/logo-t-systems-claim-white.svg-data.svg " alt="logo-t-systems-claim-white " width="15% " class="float-end ">
             </div>
-            <p class="text-center text-light"><br> CUALQUIER COSA QUE QUERÁIS AÑADIR... <br><br></p>
-            <p class="text-start text-light fs-7">© 2022 T-Systems International GmbH. All rights reserved.</p>
+            <p class="text-center text-light "><br> CUALQUIER COSA QUE QUERÁIS AÑADIR... <br><br></p>
+            <p class="text-start text-light fs-7 ">© 2022 T-Systems International GmbH. All rights reserved.</p>
         </footer>
         <!-- END FOOTER -->
+
+
     </div>
 </body>
-
 
 </html>

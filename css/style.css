@@ -127,3 +127,8 @@ body {
 .nuestroEquipo {
     font-size: 3rem;
 }
+
+.form-check-pink:checked {
+    background-color: #e20074!important;
+    border-color: #e20074!important;
+}
