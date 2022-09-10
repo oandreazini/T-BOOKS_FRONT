@@ -28,6 +28,9 @@ https://oandreazini.github.io/T-BOOKS_FRONT/books.html
 Página libro:
 https://oandreazini.github.io/T-BOOKS_FRONT/book.html
 
+Página ajustes:
+https://oandreazini.github.io/T-BOOKS_FRONT/settings.html
+
 Página admin:
 https://oandreazini.github.io/T-BOOKS_FRONT/admin_panel_author.html
 
