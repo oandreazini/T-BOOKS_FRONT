@@ -127,3 +127,10 @@ body {
     background-color: #e20074!important;
     border-color: #e20074!important;
 }
+
+.vertical {
+    border: none;
+    border-left: 1px solid hsla(200, 10%, 50%, 100);
+    height: 90%!important;
+    width: 2px;
+}
