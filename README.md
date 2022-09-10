@@ -30,7 +30,11 @@ https://oandreazini.github.io/T-BOOKS_FRONT/book.html
 
 Página admin:
 https://oandreazini.github.io/T-BOOKS_FRONT/admin_panel_author.html
+
 https://oandreazini.github.io/T-BOOKS_FRONT/admin_panel_books.html
+
 https://oandreazini.github.io/T-BOOKS_FRONT/admin_panel_editorial.html
+
 https://oandreazini.github.io/T-BOOKS_FRONT/admin_panel_loan.html
+
 https://oandreazini.github.io/T-BOOKS_FRONT/admin_panel_users.html
