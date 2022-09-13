@@ -9,7 +9,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class AdminPanelAuthorComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name','action'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;

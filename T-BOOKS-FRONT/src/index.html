@@ -2,115 +2,104 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>TBOOKSFRONT</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<<<<<<< HEAD
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8">
+    <title>TBOOKSFRONT</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div id="app" class="bg-form">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light shadow bg-pink">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <img src="./img/t-books.png" alt="T-Books" width="130px">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+    <div id="app" class="bg-form">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-light shadow bg-pink">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./img/t-books.png" alt="T-Books" width="130px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Left Side Of Navbar -->
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item mx-3 me-1">
-              <a class="nav-link text-light lh-lg focus" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-light lh-lg focus" href="#">Libros</a>
-            </li>
-          </ul>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item mx-3 me-1">
+                            <a class="nav-link text-light lh-lg focus" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light lh-lg focus" href="#">Libros</a>
+                        </li>
+                    </ul>
 
-          <!-- Right Side Of Navbar -->
-          <ul class="navbar-nav ms-auto">
-            <form class="d-flex">
-              <input class="form-control me-2 py-1" type="search" placeholder="Búsqueda" aria-label="Búsqueda">
-              <button class="btn p-0" type="submit">
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <form class="d-flex">
+                            <input class="form-control me-2 py-1" type="search" placeholder="Búsqueda" aria-label="Búsqueda">
+                            <button class="btn p-0" type="submit">
                 <i class="bi bi-search c-white fa-lg"></i>
               </button>
-            </form>
+                        </form>
 
-            <li class="nav-item dropdown ms-3">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                <i class="bi bi-person-circle c-white fa-lg"></i>
-              </a>
+                        <li class="nav-item dropdown ms-3">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="bi bi-person-circle c-white fa-lg"></i>
+                            </a>
 
-              <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="book_upload.html">Mis libros</a></li>
-                <li><a class="dropdown-item" href="uploadBook.html">Subir libro</a></li>
-                <li><a class="dropdown-item" href="settings.html">Ajustes</a></li>
-                <li><a class="dropdown-item" href="#">Ayuda</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
-              </ul>
-            </li>
-          </ul>
+                            <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="book_upload.html">Mis libros</a></li>
+                                <li><a class="dropdown-item" href="uploadBook.html">Subir libro</a></li>
+                                <li><a class="dropdown-item" href="settings.html">Ajustes</a></li>
+                                <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
 
-        </div>
-      </div>
-    </nav>
-    <!-- END NAVBAR -->
+                </div>
+            </div>
+        </nav>
+        <!-- END NAVBAR -->
 
-    <app-root></app-root>
+        <app-root></app-root>
 
-    <!-- FOOTER -->
-    <footer class=" py-3 px-5 mt-4 bg-gray ">
-      <ul class="nav justify-content-center pb-3 mb-3 ">
-        <li class="nav-item "><a href="https://twitter.com/tsystemsCom " class="nav-link px-2 text-light "><i
+        <!-- FOOTER -->
+        <footer class=" py-3 px-5 mt-4 bg-gray ">
+            <ul class="nav justify-content-center pb-3 mb-3 ">
+                <li class="nav-item "><a href="https://twitter.com/tsystemsCom " class="nav-link px-2 text-light "><i
               class="bi bi-twitter i-lg ml-50 "></i></a></li>
-        <li class="nav-item "><a href="https://www.linkedin.com/company/t-systems/ "
-            class="nav-link px-2 text-light "><i class="bi bi-linkedin i-lg ml-50 "></i></a></li>
-        <li class="nav-item "><a href="https://www.youtube.com/user/TSystemsINT " class="nav-link px-2 text-light "><i
+                <li class="nav-item "><a href="https://www.linkedin.com/company/t-systems/ " class="nav-link px-2 text-light "><i class="bi bi-linkedin i-lg ml-50 "></i></a></li>
+                <li class="nav-item "><a href="https://www.youtube.com/user/TSystemsINT " class="nav-link px-2 text-light "><i
               class="bi bi-youtube i-lg ml-50 "></i></a></li>
-      </ul>
-      <hr class="bg-white ">
-      <div class="pb-5 ">
-        <a href="https://www.t-systems.com/de/en "><img src="./img/logo-t-systems-white.svg-data.svg "
-            alt="logo-t-systems-white " width="15% "></a>
-        <img src="./img/logo-t-systems-claim-white.svg-data.svg " alt="logo-t-systems-claim-white " width="15% "
-          class="float-end ">
-      </div>
-      <p class="text-center text-light "><br> CUALQUIER COSA QUE QUERÁIS AÑADIR... <br><br></p>
-      <p class="text-start text-light fs-7 ">© 2022 T-Systems International GmbH. All rights reserved.</p>
-    </footer>
-    <!-- END FOOTER -->
+            </ul>
+            <hr class="bg-white ">
+            <div class="pb-5 ">
+                <a href="https://www.t-systems.com/de/en "><img src="./img/logo-t-systems-white.svg-data.svg " alt="logo-t-systems-white " width="15% "></a>
+                <img src="./img/logo-t-systems-claim-white.svg-data.svg " alt="logo-t-systems-claim-white " width="15% " class="float-end ">
+            </div>
+            <p class="text-center text-light "><br> CUALQUIER COSA QUE QUERÁIS AÑADIR... <br><br></p>
+            <p class="text-start text-light fs-7 ">© 2022 T-Systems International GmbH. All rights reserved.</p>
+        </footer>
+        <!-- END FOOTER -->
 
-  </div>
+    </div>
 
-=======
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body class="mat-typography">
-  <app-root></app-root>
->>>>>>> c074fc976b8cd077772d96e6240facf10f622f34
 </body>
 
 </html>
