@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+.bg-pink {
+  background-color: #e20074 !important;
+}
+
+.text-pink {
+  color: #e20074 !important;
+}
+
+.bg-gray {
+  background-color: #262626 !important;
+}
+
+body {
+  font-size: large;
+  font-family: TeleNeoWeb-Regular, sans-serif !important;
+}
