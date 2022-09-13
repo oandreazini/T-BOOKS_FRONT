@@ -1,1 +1,19 @@
-<p>books works!</p>
+<div class="container">
+  <p class="fs-1 text-pink mb-2">Libros disponibles</p>
+  <hr class="mt-0 mb-4">
+  <div class="row">
+    <div class="col" *ngFor="let book of books">
+      <div class="card" style="width: 15rem">
+        <img src="https://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{book.title}}</h5>
+          <hr class="mt-0">
+          <p class="card-text mb-1">{{book.author.nameSurname}}</p>
+          <p class="card-text mb-1">{{book.editorial.name}}</p>
+          <p class="card-text">{{book.isbn}}</p>
+          <a href="/T-BOOKS-FRONT/src/app/info-book/info-book.component.html" class="btn btn-pink">Más info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

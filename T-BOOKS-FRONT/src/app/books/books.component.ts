@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-books',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
-  constructor() { }
+  books:any = null;
 
-  ngOnInit(): void {
+  /* Get books from backend */
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.http.get("https://rts-tbooks-bbdd.herokuapp.com/books")
+    .subscribe(
+      result => {
+        this.books = result;
+      },
+      error => {
+        console.log('Problems');
+      }
+    );
   }
-
 }

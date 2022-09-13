@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminPanelAuthorComponent } from './admin-panel-author/admin-panel-author.component';
@@ -54,7 +56,8 @@ import { PushBookComponent } from './push-book/push-book.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
