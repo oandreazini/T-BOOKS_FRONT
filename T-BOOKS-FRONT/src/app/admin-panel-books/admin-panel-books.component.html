@@ -4,31 +4,26 @@
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" class="table table-striped table-bordered mt-3 table-responsive-sm">
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> ID </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-            </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef> Título </th>
+                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
             </ng-container>
 
             <ng-container matColumnDef="isbn">
-                <th mat-header-cell *matHeaderCellDef> ISBN </th>
-                <td mat-cell *matCellDef="let element"> {{element.isbn}} </td>
+                <th mat-header-cell *matHeaderCellDef class="px-3"> ISBN </th>
+                <td mat-cell *matCellDef="let element" class="px-3"> {{element.isbn}} </td>
             </ng-container>
 
             <ng-container matColumnDef="synopsis">
-                <th mat-header-cell *matHeaderCellDef> Sinopsis </th>
-                <td mat-cell *matCellDef="let element"> {{element.synopsis}} </td>
+                <th mat-header-cell *matHeaderCellDef class="px-3"> Sinopsis </th>
+                <td mat-cell *matCellDef="let element" class="px-3"> {{element.synopsis}} </td>
             </ng-container>
 
             <ng-container matColumnDef="action">
-                <th mat-header-cell *matHeaderCellDef> Acción </th>
-                <td mat-cell *matCellDef="let element">
+                <th mat-header-cell *matHeaderCellDef class="px-3"> Acción </th>
+                <td mat-cell *matCellDef="let element" class="px-3">
                     <button class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
                     <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
                 </td>
