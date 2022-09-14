@@ -116,6 +116,11 @@ body {
     max-width: 960px;
 }
 
+.container-books {
+    max-width: 65%;
+    margin: 0 auto;
+}
+
 .unete {
     margin-top: 35%;
     margin-left: 20%;
