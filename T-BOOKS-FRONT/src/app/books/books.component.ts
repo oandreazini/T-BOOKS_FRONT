@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { BooksService } from '../books.service';
 
 @Component({
   selector: 'app-books',
@@ -10,11 +10,10 @@ export class BooksComponent implements OnInit {
 
   books:any = null;
 
-  /* Get books from backend */
-  constructor(private http: HttpClient) {}
+  constructor(private booksService: BooksService) {}
 
   ngOnInit() {
-    this.http.get("https://rts-tbooks-bbdd.herokuapp.com/books")
+    this.booksService.returnAllBooks()
     .subscribe(
       result => {
         this.books = result;
