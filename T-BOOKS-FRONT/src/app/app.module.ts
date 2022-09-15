@@ -18,11 +18,11 @@ import { LoginComponent } from './login/login.component';
 import { PushBookComponent } from './push-book/push-book.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
-import { SettingsPassComponent } from './settings-pass/settings-pass.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { MatTableModule } from '@angular/material/table';
     PushBookComponent,
     RegisterComponent,
     SettingsComponent,
-    SettingsPassComponent,
     WriteCommentComponent
   ],
   imports: [
@@ -50,7 +49,8 @@ import { MatTableModule } from '@angular/material/table';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
