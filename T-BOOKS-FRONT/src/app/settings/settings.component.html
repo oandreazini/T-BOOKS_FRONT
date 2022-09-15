@@ -1,1 +1,50 @@
-<p>settings works!</p>
+<div class="container my-md-4 pb-5">
+    <h1 class="text-pink"> Ajustes</h1>
+    <hr class="mt-0">
+    <div class="row">
+
+        <!-- Cambio de contraseña -->
+        <div class="col-md-5 col-sm-10 mt-3">
+
+            <form action="index.html" method="post">
+                <div class="mb-3 mt-2">
+                    <label for="password" class="form-label"><i class="bi bi-key"></i> Contraseña actual</label>
+                    <input type="password" class="form-control" id="password">
+                </div>
+                <div class="mb-3">
+                    <label for="newPassword" class="form-label"><i class="bi bi-shield-lock"></i> Nueva contraseña</label>
+                    <input type="password" class="form-control" id="newPassword">
+                </div>
+                <div class="mb-3">
+                    <label for="verNewPassword" class="form-label"><i class="bi bi-shield-check"></i> Confirma la nueva contraseña</label>
+                    <input type="password" class="form-control" id="verNewPassword">
+                </div>
+
+                <button class="btn btn-pink rounded-1 mt-3 mb-5">Guardar contraseña</button>
+            </form>
+        </div>
+
+        <div class="col-md-1 ms-5">
+            <hr class="vertical">
+        </div>
+
+        <!-- Datos -->
+        <div class="col-md-5 mt-3">
+            <form action="index.html" method="post">
+                <div class="mb-3 mt-2">
+                    <label for="name" class="form-label"><i class="bi bi-person"></i> Nombre</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
+                    <input type="text" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label"><i class="bi bi-telephone"></i> Teléfono</label>
+                    <input type="text" class="form-control" id="phone">
+                </div>
+                <button class="btn btn-pink rounded-1 mt-3">Guardar datos</button>
+            </form>
+        </div>
+    </div>
+</div>
