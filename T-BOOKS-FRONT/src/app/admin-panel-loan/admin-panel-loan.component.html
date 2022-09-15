@@ -1,3 +1,5 @@
+<app-admin-panel></app-admin-panel>
+
 <div class="container my-md-4 bd-layout pb-5">
 
 
@@ -5,25 +7,20 @@
         <table mat-table [dataSource]="dataSource" class="table table-striped table-bordered mt-3 table-responsive-sm">
 
             <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> ID </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            <ng-container matColumnDef="start">
+                <th mat-header-cell *matHeaderCellDef> Fecha Inicio </th>
+                <td mat-cell *matCellDef="let element"> {{element.start}} </td>
             </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Inicio </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <ng-container matColumnDef="finish">
+                <th mat-header-cell *matHeaderCellDef> Fecha Fin </th>
+                <td mat-cell *matCellDef="let element"> {{element.finish}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="isbn">
-                <th mat-header-cell *matHeaderCellDef> Finalizado </th>
-                <td mat-cell *matCellDef="let element"> {{element.isbn}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="synopsis">
+            <ng-container matColumnDef="valuation">
                 <th mat-header-cell *matHeaderCellDef> Valoración </th>
-                <td mat-cell *matCellDef="let element"> {{element.synopsis}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.valuation}} </td>
             </ng-container>
 
             <ng-container matColumnDef="comment">
