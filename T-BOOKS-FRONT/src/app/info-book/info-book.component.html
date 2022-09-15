@@ -1,22 +1,25 @@
 <div class="container my-md-4 pb-5 mb-5">
-    <h2 class="pt-2">Propietario: Roger Rubio</h2>
+    <h2 class="pt-2">Propietario: {{data.user.name}}</h2>
     <hr class="px-0 me-5">
     <div class="row mt-4">
         <div class="col-md-6 col-sm-12">
 
-            <img src="https://covers.openlibrary.org/b/isbn/9780439362139-L.jpg" alt="harry harry-potter-piedra-filosofal-minalima-portada">
+            <img src="https://covers.openlibrary.org/b/isbn/{{data.isbn}}-L.jpg" alt="{{data.title}}">
         </div>
 
         <div class="col-md-6 col-sm-6">
-            <p class="fs-4 mb-2">Harry Potter y la piedra filosofal</p>
+            <p class="fs-4 mb-2">{{data.title}}</p>
             <hr class="mt-0 me-4">
-            <p class="mb-1"><span class="fw-bold">Editorial:</span> salamandra</p>
-            <p class="mb-1"><span class="fw-bold"> Autor:</span> J.K. Rowling</p>
-            <p><span class="fw-bold"> ISBN:</span> 9780439362139</p>
+            <p class="mb-1"><span class="fw-bold"> Editorial:</span> {{data.editorial.name}}</p>
+            <p class="mb-1"><span class="fw-bold"> Autor:</span> {{data.author.name}}</p>
+            <p><span class="fw-bold"> ISBN:</span> {{data.isbn}}</p>
             <span class="fw-bold"> Sinopsis:</span>
-            <p>El día en que cumple once años, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. Deberá acudir entonces a una famosa escuela de magia y hechicería: Howards.</p>
+            <p>{{data.synopsis}}</p>
 
             <a href="#" class="btn btn-pink mt-4">Pedir prestado</a>
         </div>
     </div>
 </div>
+
+<app-comments></app-comments>
+<app-write-comment></app-write-comment>

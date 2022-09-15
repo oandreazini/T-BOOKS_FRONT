@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../services/books.service';
 
-
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -9,7 +8,7 @@ import { BooksService } from '../services/books.service';
 })
 export class BooksComponent implements OnInit {
 
-  books:any = null;
+  books:any;
 
   constructor(private booksService: BooksService) {}
 
@@ -20,7 +19,7 @@ export class BooksComponent implements OnInit {
         this.books = result;
       },
       error => {
-        console.log('Problems');
+        console.log(error);
       }
     );
   }

@@ -11,7 +11,7 @@
                     <p class="card-text mb-1">{{book.author.nameSurname}}</p>
                     <p class="card-text mb-1">{{book.editorial.name}}</p>
                     <p class="card-text">{{book.isbn}}</p>
-                    <a href="/T-BOOKS-FRONT/src/app/info-book/info-book.component.html" class="btn btn-pink">Más info</a>
+                    <a routerLink="/books/{{book.id}}" class="btn btn-pink">Más info</a>
                 </div>
             </div>
         </div>
