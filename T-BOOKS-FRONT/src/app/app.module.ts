@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SettingsPassComponent } from './settings-pass/settings-pass.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { WriteCommentComponent } from './write-comment/write-comment.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
