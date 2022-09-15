@@ -4,7 +4,6 @@ import {MatTableDataSource} from '@angular/material/table';
 import { IBooks } from '../models/ibooks';
 import { BooksService } from '../services/books.service';
 
-
 @Component({
   selector: 'app-admin-panel-books',
   templateUrl: './admin-panel-books.component.html',
@@ -16,14 +15,12 @@ export class AdminPanelBooksComponent implements OnInit {
   displayedColumns: string[] = ['title', 'isbn','synopsis','action'];
   dataSource = new MatTableDataSource<IBooks>(this.ELEMENT_DATA);
 
-
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
 
   constructor(private booksService: BooksService) { }
 
@@ -34,7 +31,6 @@ export class AdminPanelBooksComponent implements OnInit {
   getAllBooks(){
     let resp = this.booksService.returnAllBooks();
     resp.subscribe(report=> this.dataSource.data = report as IBooks[]);
-
   }
 
 }

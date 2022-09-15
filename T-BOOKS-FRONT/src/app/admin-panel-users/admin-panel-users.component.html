@@ -1,34 +1,32 @@
-<div class="container pb-5">
+<div class="container my-md-4 pb-5">
 
 
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" class="table table-striped table-bordered mt-3 table-responsive-sm">
 
-            <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> ID </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-            </ng-container>
-
-            <!-- Name Column -->
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef> Nombre </th>
                 <td mat-cell *matCellDef="let element"> {{element.name}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="isbn">
+            <ng-container matColumnDef="username">
                 <th mat-header-cell *matHeaderCellDef> Usuario </th>
-                <td mat-cell *matCellDef="let element"> {{element.isbn}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.username}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="synopsis">
+            <ng-container matColumnDef="email">
                 <th mat-header-cell *matHeaderCellDef> E-Mail </th>
-                <td mat-cell *matCellDef="let element"> {{element.synopsis}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
             </ng-container>
 
-            <ng-container matColumnDef="comment">
+            <ng-container matColumnDef="phone">
                 <th mat-header-cell *matHeaderCellDef> Teléfono </th>
-                <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="city">
+                <th mat-header-cell *matHeaderCellDef> Ciudad </th>
+                <td mat-cell *matCellDef="let element"> {{element.city}} </td>
             </ng-container>
 
             <ng-container matColumnDef="action">
