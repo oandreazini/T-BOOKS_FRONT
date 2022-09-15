@@ -43,17 +43,4 @@ export class RegisterComponent implements OnInit {
       error => {console.log(error)}
     )
   }
-
-  newUser(): void {
-    this.submitted = false;
-    this.user = {
-      name: '',
-      email: '',
-      phone: '',
-      city: '',
-      username: '',
-      password: '',
-      role: ''
-    }
-  }
 }
