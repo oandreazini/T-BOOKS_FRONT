@@ -25,6 +25,7 @@ import { PushBookComponent } from './push-book/push-book.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { WriteCommentComponent } from './write-comment/write-comment.component';
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
