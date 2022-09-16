@@ -6,22 +6,22 @@
     <div class="col-md-8 col-sm-10">
       <div class="mb-3 mt-5">
         <label for="titulo" class="form-label">Fecha inicio</label>
-        <input type="text" class="form-control" id="titulo">
+        <input type="text" class="form-control" id="titulo" [(ngModel)]="loan.start" >
       </div>
 
       <div class="mb-1 mt-4">
         <label for="titulo" class="form-label">Fecha fin</label>
-        <input type="text" class="form-control" id="titulo">
+        <input type="text" class="form-control" id="titulo" [(ngModel)]="loan.finish" >
       </div>
 
       <div class="mb-1 mt-4">
         <label for="titulo" class="form-label">Valoración</label>
-        <input type="text" class="form-control" id="titulo">
+        <input type="text" class="form-control" id="titulo" [(ngModel)]="loan.valuation" >
       </div>
 
       <div class="mb-1 mt-4">
         <label for="titulo" class="form-label">Comentario</label>
-        <input type="text" class="form-control" id="titulo">
+        <input type="text" class="form-control" id="titulo" [(ngModel)]="loan.comment" >
       </div>
 
       <button class="btn btn-pink rounded-1 mt-5">Guardar</button>
