@@ -26,6 +26,11 @@ import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
 import { FormsModule } from '@angular/forms';
+import { ModAuthorComponent } from './mod-author/mod-author.component';
+import { ModBooksComponent } from './mod-books/mod-books.component';
+import { ModEditorialComponent } from './mod-editorial/mod-editorial.component';
+import { ModLoanComponent } from './mod-loan/mod-loan.component';
+import { ModUsersComponent } from './mod-users/mod-users.component';
 
 
 @NgModule({
@@ -46,7 +51,12 @@ import { FormsModule } from '@angular/forms';
     PushBookComponent,
     RegisterComponent,
     SettingsComponent,
-    WriteCommentComponent
+    WriteCommentComponent,
+    ModAuthorComponent,
+    ModBooksComponent,
+    ModEditorialComponent,
+    ModLoanComponent,
+    ModUsersComponent
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,7 @@ import { PushBookComponent } from './push-book/push-book.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
+import { ModAuthorComponent } from './mod-author/mod-author.component';
 
 const routes: Routes = [
   {
@@ -78,6 +79,10 @@ const routes: Routes = [
   {
     path: 'writeComment',
     component: WriteCommentComponent
+  },
+  {
+    path: 'mod_author',
+    component: ModAuthorComponent
   }
 ];
 
