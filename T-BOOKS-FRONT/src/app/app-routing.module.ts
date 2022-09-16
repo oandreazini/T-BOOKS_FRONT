@@ -18,6 +18,10 @@ import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
 import { ModAuthorComponent } from './mod-author/mod-author.component';
+import { ModUsersComponent } from './mod-users/mod-users.component';
+import { ModLoanComponent } from './mod-loan/mod-loan.component';
+import { ModEditorialComponent } from './mod-editorial/mod-editorial.component';
+import { ModBooksComponent } from './mod-books/mod-books.component';
 
 const routes: Routes = [
   {
@@ -83,6 +87,22 @@ const routes: Routes = [
   {
     path: 'mod_author',
     component: ModAuthorComponent
+  },
+  {
+    path: 'mod_books',
+    component: ModBooksComponent
+  },
+  {
+    path: 'mod_editorial',
+    component: ModEditorialComponent
+  },
+  {
+    path: 'mod_loan',
+    component: ModLoanComponent
+  },
+  {
+    path: 'mod_users',
+    component: ModUsersComponent
   }
 ];
 
