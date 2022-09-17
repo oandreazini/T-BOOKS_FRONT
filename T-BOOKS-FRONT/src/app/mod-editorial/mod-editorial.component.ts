@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Editorial } from '../models/editorial.model';
 import { EditorialsService } from '../services/editorials.service';
 
@@ -15,10 +15,24 @@ export class ModEditorialComponent implements OnInit {
   };
   message = '';
 
-  constructor(private editorialService: EditorialsService, private router: Router) { }
+  constructor(private editorialService: EditorialsService, private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.message = '';
+    this.getEditorial(this.activateRoute.snapshot.paramMap.get("id"));
+  }
+
+  getEditorial(id: any): void {
+    this.editorialService.returnEditorialById(id)
+    .subscribe(
+      data => {
+        this.editorial = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   updateEditorial(): void{

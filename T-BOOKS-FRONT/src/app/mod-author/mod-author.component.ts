@@ -19,7 +19,20 @@ export class ModAuthorComponent implements OnInit {
 
   ngOnInit(): void {
     this.message = '';
-    //this.getAuthor(this.activeRoute.snapshot.paramMap.get("id"));
+    this.getAuthor(this.activeRoute.snapshot.paramMap.get("id"));
+  }
+
+  getAuthor(id: any): void {
+    this.authorService.getById(id)
+    .subscribe(
+      data => {
+        this.author = data;
+        console.log("data: " + data);
+      },
+      error => {
+        console.log("error" + error);
+      }
+    );
   }
 
   updateAuthor():void {
@@ -28,11 +41,11 @@ export class ModAuthorComponent implements OnInit {
     this.authorService.update(this.author.id, this.author)
     .subscribe(
       response => {
-        console.log(response);
+        console.log("respuesta:" + response);
         this.message = response.message ? response.message : "The status was updated successfully";
       },
       error => {
-        console.log(error);
+        console.log("error:" + error);
       }
     );
   }
