@@ -85,23 +85,23 @@ const routes: Routes = [
     component: WriteCommentComponent
   },
   {
-    path: 'mod_author',
+    path: 'mod_author/:id',
     component: ModAuthorComponent
   },
   {
-    path: 'mod_books',
+    path: 'mod_books/:id',
     component: ModBooksComponent
   },
   {
-    path: 'mod_editorial',
+    path: 'mod_editorial/:id',
     component: ModEditorialComponent
   },
   {
-    path: 'mod_loan',
+    path: 'mod_loan/:id',
     component: ModLoanComponent
   },
   {
-    path: 'mod_users',
+    path: 'mod_users/:id',
     component: ModUsersComponent
   }
 ];
