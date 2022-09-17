@@ -1,6 +1,8 @@
 import { Component, OnInit,AfterViewInit,ViewChild } from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { Router } from '@angular/router';
+import { Book } from '../models/book.model';
 import { IBooks } from '../models/ibooks';
 import { BooksService } from '../services/books.service';
 
@@ -10,6 +12,30 @@ import { BooksService } from '../services/books.service';
   styleUrls: ['./admin-panel-books.component.css']
 })
 export class AdminPanelBooksComponent implements OnInit {
+
+  book: Book = {
+    title: '',
+    isbn: '',
+    synopsis: '',
+    author: {
+      id: '',
+      nameSurname: '',
+    },
+    editorial: {
+      id: '',
+      name: '',
+    },
+    user: {
+      id: '',
+      name: '',
+      email: '',
+      phone: '',
+      city: '',
+      username: '',
+      password: '',
+      role: '',
+    }
+  };
 
   ELEMENT_DATA!: IBooks[];
   displayedColumns: string[] = ['title', 'isbn','synopsis','action'];
@@ -22,7 +48,7 @@ export class AdminPanelBooksComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(private booksService: BooksService) { }
+  constructor(private booksService: BooksService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -31,6 +57,18 @@ export class AdminPanelBooksComponent implements OnInit {
   getAllBooks(){
     let resp = this.booksService.returnAllBooks();
     resp.subscribe(report=> this.dataSource.data = report as IBooks[]);
+  }
+
+  deleteBook(){
+    this.booksService.delete(this.book.id)
+    .subscribe(
+      response =>{
+        this.router.navigate(['/AdminPanelBooks']);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
