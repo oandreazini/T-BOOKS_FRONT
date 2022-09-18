@@ -8,6 +8,9 @@ import { BooksService } from '../services/books.service';
   styleUrls: ['./push-book.component.css'],
 })
 export class PushBookComponent implements OnInit {
+  authorName?: string;
+  editorialName?: string;
+
   book: Book = {
     title: '',
     isbn: '',
@@ -42,11 +45,11 @@ export class PushBookComponent implements OnInit {
       synopsis: this.book.synopsis,
       author: {
         id: this.book.author?.id,
-        nameSurname: this.book.author?.nameSurname,
+        nameSurname: this.authorName,
       },
       editorial: {
         id: this.book.editorial?.id,
-        name: this.book.editorial?.name,
+        name: this.editorialName,
       },
       user: {
         id: this.book.user?.id,

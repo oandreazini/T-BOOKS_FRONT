@@ -41,7 +41,7 @@ export class ModEditorialComponent implements OnInit {
     this.editorialService.update(this.editorial.id, this.editorial)
     .subscribe(
       response => {
-        console.log(response);
+        console.log(response.message);
         this.message = response.message ? response.message : "The status was updated successfully";
       },
       error => {

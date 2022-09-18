@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Loan } from '../models/loan.model';
 import { LoansService } from '../services/loans.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-mod-loan',
@@ -14,28 +16,24 @@ export class ModLoanComponent implements OnInit {
     valuation: '',
     comment: ''
   };
-  submitted = false;
+  message = '';
 
-  constructor(private loanService: LoansService) { }
+  constructor(private loanService: LoansService,  private router: Router) { }
 
   ngOnInit(): void {
+    this.message ='';
   }
 
-  saveLoan(): void {
-    const data = {
-      start: this.loan.start,
-      finish: this.loan.finish,
-      valuation: this.loan.valuation,
-      comment: this.loan.comment,
-    };
+  updateLoan(): void {
+    this.message = '';
 
-    this.loanService.create(data).subscribe(
+    this.loanService.update(this.loan.id, this.loan)
+    .subscribe(
       response => {
         console.log(response);
-        this.submitted = true;
+        this.message = response.message ? response.message: "The status was updated successfully";
       },
       error => {console.log(error)}
-    )
+    );
   }
-
 }
