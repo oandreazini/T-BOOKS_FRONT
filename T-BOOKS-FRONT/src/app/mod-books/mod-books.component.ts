@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../models/book.model';
 import { BooksService } from '../services/books.service';
 
@@ -14,11 +14,9 @@ export class ModBooksComponent implements OnInit {
     isbn: '',
     synopsis: '',
     author: {
-      id: '',
       nameSurname: '',
     },
     editorial: {
-      id: '',
       name: '',
     },
     user: {
@@ -34,10 +32,24 @@ export class ModBooksComponent implements OnInit {
   };
   message = '';
 
-  constructor(private bookService: BooksService, private router: Router) {}
+  constructor(private bookService: BooksService, private router: Router, private activateRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.message = '';
+    this.getBook(this.activateRoute.snapshot.paramMap.get("id"));
+  }
+
+  getBook(id: any): void {
+    this.bookService.returnBookById(id)
+    .subscribe(
+      data => {
+        this.book = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   updateBook(): void {

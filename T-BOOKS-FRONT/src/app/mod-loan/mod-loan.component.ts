@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Loan } from '../models/loan.model';
 import { LoansService } from '../services/loans.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -18,10 +18,24 @@ export class ModLoanComponent implements OnInit {
   };
   message = '';
 
-  constructor(private loanService: LoansService,  private router: Router) { }
+  constructor(private loanService: LoansService,  private router: Router, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.message ='';
+    this.getLoan(this.activateRoute.snapshot.paramMap.get("id"));
+  }
+
+  getLoan(id: any): void {
+    this.loanService.returnLoanById(id)
+    .subscribe(
+      data => {
+        this.loan = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   updateLoan(): void {

@@ -1,33 +1,33 @@
 <div class="pb-4"></div>
 
 <div class="container my-md-4 pb-5 mb-5">
-  <div class="row">
-    <div class="col-md-2 col-sm-1"></div>
-    <div class="col-md-8 col-sm-10">
-      <div class="mb-3 mt-5">
-        <label for="titulo" class="form-label">Fecha inicio</label>
-        <input type="text" class="form-control" id="titulo" [(ngModel)]="loan.start" >
-      </div>
+    <div class="row">
+        <div class="col-md-2 col-sm-1"></div>
+        <div class="col-md-8 col-sm-10">
+            <div class="mb-3 mt-5">
+                <label for="start" class="form-label">Fecha inicio</label>
+                <input type="text" class="form-control" id="start" [(ngModel)]="loan.start">
+            </div>
 
-      <div class="mb-1 mt-4">
-        <label for="titulo" class="form-label">Fecha fin</label>
-        <input type="text" class="form-control" id="titulo" [(ngModel)]="loan.finish" >
-      </div>
+            <div class="mb-1 mt-4">
+                <label for="finish" class="form-label">Fecha fin</label>
+                <input type="text" class="form-control" id="finish" [(ngModel)]="loan.finish">
+            </div>
 
-      <div class="mb-1 mt-4">
-        <label for="titulo" class="form-label">Valoración</label>
-        <input type="text" class="form-control" id="titulo" [(ngModel)]="loan.valuation" >
-      </div>
+            <div class="mb-1 mt-4">
+                <label for="valuation" class="form-label">Valoración</label>
+                <input type="text" class="form-control" id="valuation" [(ngModel)]="loan.valuation">
+            </div>
 
-      <div class="mb-1 mt-4">
-        <label for="titulo" class="form-label">Comentario</label>
-        <input type="text" class="form-control" id="titulo" [(ngModel)]="loan.comment" >
-      </div>
+            <div class="mb-1 mt-4">
+                <label for="comment" class="form-label">Comentario</label>
+                <input type="text" class="form-control" id="comment" [(ngModel)]="loan.comment">
+            </div>
 
-      <button class="btn btn-pink rounded-1 mt-5" >Guardar</button>
+            <button class="btn btn-pink rounded-1 mt-5" (click)="updateLoan()" routerLink="/adminPanelLoan/">Guardar</button>
+        </div>
+        <div class="col-md-2 col-sm-1"></div>
     </div>
-    <div class="col-md-2 col-sm-1"></div>
-  </div>
 </div>
 
 <div class="pb-4"></div>
