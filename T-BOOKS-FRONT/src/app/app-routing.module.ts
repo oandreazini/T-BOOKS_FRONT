@@ -22,6 +22,7 @@ import { ModUsersComponent } from './mod-users/mod-users.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModEditorialComponent } from './mod-editorial/mod-editorial.component';
 import { ModBooksComponent } from './mod-books/mod-books.component';
+import { SearchBookComponent } from './search-book/search-book.component';
 
 const routes: Routes = [
   {
@@ -103,6 +104,10 @@ const routes: Routes = [
   {
     path: 'mod_users/:id',
     component: ModUsersComponent
+  },
+  {
+    path: 'search_book/:id',
+    component: SearchBookComponent
   }
 ];
 

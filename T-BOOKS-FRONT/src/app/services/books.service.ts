@@ -32,4 +32,7 @@ export class BooksService {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
+  getByTitle(title: any): Observable<Book[]>{
+    return this.http.get<Book[]>(`${baseUrl}/title/${title}`);
+  }
 }

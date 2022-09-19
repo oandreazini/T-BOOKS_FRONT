@@ -21,12 +21,12 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
-                <form class="d-flex">
-                    <input class="form-control me-2 py-1" type="search" placeholder="Búsqueda" aria-label="Búsqueda">
-                    <button class="btn p-0" type="submit">
+                <!-- <form class="d-flex"> -->
+                    <input class="form-control me-2 py-1" type="search" placeholder="Búsqueda" aria-label="Búsqueda" [(ngModel)]="title">
+                    <button class="btn p-0" type="submit" (click)="searchName()">
           <i class="bi bi-search c-white fa-lg"></i>
         </button>
-                </form>
+                <!-- </form> -->
 
                 <li class="nav-item dropdown ms-3">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -50,7 +50,7 @@
 <!-- END NAVBAR -->
 
 
-<router-outlet></router-outlet>
+ <router-outlet></router-outlet>
 
 
 <!-- FOOTER -->

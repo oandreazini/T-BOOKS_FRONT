@@ -31,6 +31,7 @@ import { ModBooksComponent } from './mod-books/mod-books.component';
 import { ModEditorialComponent } from './mod-editorial/mod-editorial.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModUsersComponent } from './mod-users/mod-users.component';
+import { SearchBookComponent } from './search-book/search-book.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ModUsersComponent } from './mod-users/mod-users.component';
     ModBooksComponent,
     ModEditorialComponent,
     ModLoanComponent,
-    ModUsersComponent
+    ModUsersComponent,
+    SearchBookComponent
   ],
   imports: [
     BrowserModule,
