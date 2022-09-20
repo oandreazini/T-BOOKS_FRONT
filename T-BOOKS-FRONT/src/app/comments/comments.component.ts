@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoansService } from '../services/loans.service';
 
 @Component({
   selector: 'app-comments',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
-  constructor() { }
+  loan: any;
+
+  constructor(private loanService: LoansService) { }
 
   ngOnInit(): void {
+    this.loanService.returnAllLoans()
+    .subscribe(
+      result => {
+        this.loan = result;
+        console.log(result);
+
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }

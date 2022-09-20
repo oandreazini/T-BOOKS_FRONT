@@ -22,25 +22,38 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
                 <!-- <form class="d-flex"> -->
-                    <input class="form-control me-2 py-1" type="search" placeholder="Búsqueda" aria-label="Búsqueda" [(ngModel)]="title">
-                    <button class="btn p-0" type="submit" (click)="searchName()">
+                <input class="form-control me-2 py-1" type="search" placeholder="Búsqueda" aria-label="Búsqueda" [(ngModel)]="title">
+                <button class="btn p-0" type="submit" (click)="searchName()">
           <i class="bi bi-search c-white fa-lg"></i>
         </button>
                 <!-- </form> -->
 
-                <li class="nav-item dropdown ms-3">
+                <li class="nav-item dropdown ms-3" *ngIf="!isLoggedIn">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="bi bi-person-circle c-white fa-lg"></i>
+                        <i class="bi bi-list fa-lg"></i>
                     </a>
 
                     <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="register">Registrarse</a></li>
+                        <li><a class="dropdown-item" routerLink="login">Iniciar sesión</a></li>
+                    </ul>
+
+                </li>
+
+
+                <li class="nav-item dropdown ms-3" *ngIf="isLoggedIn">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="bi bi-person-circle c-white fa-lg"></i>
+                    </a>
+                    <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" routerLink="/adminPanelUsers" *ngIf="role == 'ADMIN'">Panel de administrador</a></li>
                         <li><a class="dropdown-item" routerLink="bookUpload">Mis libros</a></li>
                         <li><a class="dropdown-item" routerLink="pushBook">Subir libro</a></li>
                         <li><a class="dropdown-item" routerLink="settings">Ajustes</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                        <li><a class="dropdown-item" (click)="logout()">Cerrar sesión</a></li>
                     </ul>
                 </li>
             </ul>
@@ -50,7 +63,7 @@
 <!-- END NAVBAR -->
 
 
- <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
 
 <!-- FOOTER -->
