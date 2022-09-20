@@ -7,7 +7,7 @@ import { BooksService } from './services/books.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   template: `
-  <app-search-book [books]="books"></app-search-book>
+  <app-search-book [searchBook]="books"></app-search-book>
 `
 })
 export class AppComponent {

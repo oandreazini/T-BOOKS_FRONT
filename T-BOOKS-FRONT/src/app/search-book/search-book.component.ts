@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Book } from '../models/book.model';
-import { BooksService } from '../services/books.service';
+
 
 @Component({
   selector: 'app-search-book',
@@ -9,14 +8,12 @@ import { BooksService } from '../services/books.service';
 })
 export class SearchBookComponent implements OnInit {
 
-  @Input() books:any;
+  @Input() searchBook:any;
 
-  currentBooks: Book = {};
-  currentIndex = -1;
-  title = '';
-  constructor(private booksService: BooksService) { }
+  constructor() { }
 
   ngOnInit(): void {
+    console.log(this.searchBook);
   }
 
 }

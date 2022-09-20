@@ -1,7 +1,7 @@
 <p class="fs-1 text-pink mb-2">Libros disponibles</p>
   <hr class="mt-0 mb-4">
   <div class="row">
-      <div class="col" *ngFor="let book of books">
+      <div class="col" *ngFor="let book of searchBook">
           <div class="card" style="width: 15rem">
               <img src="https://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg" class="card-img-top">
               <div class="card-body">
