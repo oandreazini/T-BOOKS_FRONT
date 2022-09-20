@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
 import { UsersService } from '../services/users.service';
 import { AuthService } from '../_services/auth.service';
+import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-register',
@@ -35,7 +36,7 @@ export class RegisterComponent implements OnInit {
   };
   submitted = false;
 
-  constructor(private userService: UsersService, private authService: AuthService) {}
+  constructor(private userService: UsersService, private authService: AuthService, private toastService: HotToastService) {}
 
   ngOnInit(): void {}
 
@@ -47,9 +48,12 @@ export class RegisterComponent implements OnInit {
     this.authService.register(name,email,phone,city,username,password,role)
     .subscribe(
       data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
+        this.showToast();
+        setTimeout(() => {
+          this.isSignUpFailed = false;
+          this.isSuccessful = true;
+          this.reload();
+        }, 2000);
       },
       error => {
         this.errorMessage = error.error.message;
@@ -79,4 +83,23 @@ export class RegisterComponent implements OnInit {
       error => {console.log(error)}
     )
   }
+
+  showToast() {
+    this.toastService.show('Te has registrado con éxito.', {
+      position: 'top-right',
+      duration: 5000,
+      style: {
+        border: '1px solid #badbcc',
+        background: '#d1e7dd',
+        padding: '16px',
+        color: '#0f5132',
+      },
+    });
+  }
+
+  reload(): void {
+    window.location.assign('/login');
+  }
+
+
 }

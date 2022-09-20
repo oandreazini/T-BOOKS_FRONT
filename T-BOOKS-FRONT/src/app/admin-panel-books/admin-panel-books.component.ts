@@ -53,10 +53,11 @@ export class AdminPanelBooksComponent implements OnInit {
     resp.subscribe(report=> this.dataSource.data = report as IBooks[]);
   }
 
-  deleteBook(){
-    this.booksService.delete(this.book.id)
+  deleteBook(id: any){
+    this.booksService.delete(id)
     .subscribe(
       response =>{
+        console.log(response);
         this.router.navigate(['/AdminPanelBooks']);
       },
       error => {

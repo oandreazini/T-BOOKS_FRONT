@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { ModBooksComponent } from './mod-books/mod-books.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModUsersComponent } from './mod-users/mod-users.component';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { ModUsersComponent } from './mod-users/mod-users.component';
     MatPaginatorModule,
     MatTableModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    HotToastModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
