@@ -5,7 +5,10 @@ import { BooksService } from './services/books.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  template: `
+  <app-search-book [books]="books"></app-search-book>
+`
 })
 export class AppComponent {
   // title = 'T-BOOKS-FRONT';
@@ -27,6 +30,7 @@ export class AppComponent {
       data => {
         this.books = data;
         console.log(data);
+        window.location.assign("search_book/:id");
       },
       error => {
         console.log(error);

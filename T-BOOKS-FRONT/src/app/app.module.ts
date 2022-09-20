@@ -9,9 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Components
 import { AppComponent } from './app.component';
-import { AdminPanelAuthorComponent } from './admin-panel-author/admin-panel-author.component';
 import { AdminPanelBooksComponent } from './admin-panel-books/admin-panel-books.component';
-import { AdminPanelEditorialComponent } from './admin-panel-editorial/admin-panel-editorial.component';
 import { AdminPanelLoanComponent } from './admin-panel-loan/admin-panel-loan.component';
 import { AdminPanelUsersComponent } from './admin-panel-users/admin-panel-users.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
@@ -26,9 +24,7 @@ import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
 import { FormsModule } from '@angular/forms';
-import { ModAuthorComponent } from './mod-author/mod-author.component';
 import { ModBooksComponent } from './mod-books/mod-books.component';
-import { ModEditorialComponent } from './mod-editorial/mod-editorial.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModUsersComponent } from './mod-users/mod-users.component';
 import { SearchBookComponent } from './search-book/search-book.component';
@@ -37,9 +33,7 @@ import { SearchBookComponent } from './search-book/search-book.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AdminPanelAuthorComponent,
     AdminPanelBooksComponent,
-    AdminPanelEditorialComponent,
     AdminPanelLoanComponent,
     AdminPanelUsersComponent,
     AdminPanelComponent,
@@ -53,9 +47,7 @@ import { SearchBookComponent } from './search-book/search-book.component';
     RegisterComponent,
     SettingsComponent,
     WriteCommentComponent,
-    ModAuthorComponent,
     ModBooksComponent,
-    ModEditorialComponent,
     ModLoanComponent,
     ModUsersComponent,
     SearchBookComponent

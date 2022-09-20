@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Book } from '../models/book.model';
 import { BooksService } from '../services/books.service';
 
@@ -9,7 +9,7 @@ import { BooksService } from '../services/books.service';
 })
 export class SearchBookComponent implements OnInit {
 
-  books:any;
+  @Input() books:any;
 
   currentBooks: Book = {};
   currentIndex = -1;
@@ -18,20 +18,5 @@ export class SearchBookComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  // searchName(): void{
-  //   this.currentBooks = {};
-  //   this.currentIndex = -1;
-
-  //   this.booksService.getByTitle(this.title)
-  //   .subscribe(
-  //     data => {
-  //       this.books = data;
-  //       console.log(data);
-  //     },
-  //     error => {
-  //       console.log(error);
-  //     });
-  // }
 
 }

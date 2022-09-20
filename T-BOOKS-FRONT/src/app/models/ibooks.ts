@@ -3,14 +3,8 @@ export interface IBooks {
   title: string;
   isbn: string;
   synopsis: string;
-  author: {
-    id: number;
-    nameSurname: string;
-  };
-  editorial: {
-    id: number;
-    name: string;
-  };
+  author:string;
+  editorial: string;
   user: {
     id: number;
     name: string;
