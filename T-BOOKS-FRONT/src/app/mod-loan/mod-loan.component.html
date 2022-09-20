@@ -24,7 +24,7 @@
                 <input type="text" class="form-control" id="comment" [(ngModel)]="loan.comment">
             </div>
 
-            <button class="btn btn-pink rounded-1 mt-5" (click)="updateLoan()" routerLink="/adminPanelLoan/">Guardar</button>
+            <button class="btn btn-pink rounded-1 mt-5" (click)="updateLoan()" (click)="reload()">Guardar</button>
         </div>
         <div class="col-md-2 col-sm-1"></div>
     </div>

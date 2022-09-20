@@ -9,7 +9,8 @@ import { BooksService } from '../services/books.service';
 })
 export class BooksComponent implements OnInit {
 
-  books:any;
+  allBooks:any;
+  books: any;
 
   currentBooks: Book = {};
   currentIndex = -1;
@@ -22,6 +23,7 @@ export class BooksComponent implements OnInit {
     .subscribe(
       result => {
         this.books = result;
+        console.log(this.books);
       },
       error => {
         console.log(error);
@@ -43,4 +45,5 @@ export class BooksComponent implements OnInit {
         console.log(error);
       });
   }
+
 }

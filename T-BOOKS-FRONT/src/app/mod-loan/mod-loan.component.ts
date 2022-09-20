@@ -50,4 +50,9 @@ export class ModLoanComponent implements OnInit {
       error => {console.log(error)}
     );
   }
+
+  reload(): void{
+    window.location.assign("/adminPanelLoan");
+  }
 }
+

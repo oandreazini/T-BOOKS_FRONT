@@ -27,7 +27,6 @@ import { FormsModule } from '@angular/forms';
 import { ModBooksComponent } from './mod-books/mod-books.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModUsersComponent } from './mod-users/mod-users.component';
-import { SearchBookComponent } from './search-book/search-book.component';
 
 
 @NgModule({
@@ -49,8 +48,7 @@ import { SearchBookComponent } from './search-book/search-book.component';
     WriteCommentComponent,
     ModBooksComponent,
     ModLoanComponent,
-    ModUsersComponent,
-    SearchBookComponent
+    ModUsersComponent
   ],
   imports: [
     BrowserModule,
