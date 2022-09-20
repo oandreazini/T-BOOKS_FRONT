@@ -35,4 +35,8 @@ export class BooksService {
   getByTitle(title: any): Observable<Book[]>{
     return this.http.get<Book[]>(`${baseUrl}/title/${title}`);
   }
+
+  getByBooksByUser(userId: any): Observable<Book[]>{
+    return this.http.get<Book[]>(`${baseUrl}/user/${userId}`);
+  }
 }
