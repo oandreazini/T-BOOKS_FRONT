@@ -3,14 +3,8 @@ export class Book {
   title?: string;
   isbn?: string;
   synopsis?: string;
-  author?: {
-    id?: any;
-    nameSurname?: string;
-  };
-  editorial?: {
-    id?: any;
-    name?: string;
-  };
+  author?: string;
+  editorial?: string;
   user?: {
     id?: any;
     name?: string;
