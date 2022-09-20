@@ -6,7 +6,10 @@ import { TokenStorageService } from './_services/token-storage.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  template: `
+  <app-search-book [searchBook]="books"></app-search-book>
+`
 })
 export class AppComponent {
   private roles: string[] = [];
@@ -50,6 +53,7 @@ export class AppComponent {
       data => {
         this.books = data;
         console.log(data);
+        window.location.assign("search_book/:id");
       },
       error => {
         console.log(error);

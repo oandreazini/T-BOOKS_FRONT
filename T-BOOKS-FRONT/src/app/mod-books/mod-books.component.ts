@@ -13,12 +13,8 @@ export class ModBooksComponent implements OnInit {
     title: '',
     isbn: '',
     synopsis: '',
-    author: {
-      nameSurname: '',
-    },
-    editorial: {
-      name: '',
-    },
+    author:'',
+    editorial: '',
     user: {
       id: '',
       name: '',

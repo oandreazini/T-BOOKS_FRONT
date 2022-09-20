@@ -17,14 +17,8 @@ export class AdminPanelBooksComponent implements OnInit {
     title: '',
     isbn: '',
     synopsis: '',
-    author: {
-      id: '',
-      nameSurname: '',
-    },
-    editorial: {
-      id: '',
-      name: '',
-    },
+    author: '',
+    editorial: '',
     user: {
       id: '',
       name: '',

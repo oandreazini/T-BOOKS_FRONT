@@ -15,14 +15,8 @@ export class PushBookComponent implements OnInit {
     title: '',
     isbn: '',
     synopsis: '',
-    author: {
-      id: '',
-      nameSurname: '',
-    },
-    editorial: {
-      id: '',
-      name: '',
-    },
+    author: '',
+    editorial: '',
     user: {
       id: '',
       name: '',
@@ -30,7 +24,7 @@ export class PushBookComponent implements OnInit {
       phone: '',
       username: '',
       password: '',
-      role: '',
+      role: ''
     },
   };
 
@@ -43,14 +37,8 @@ export class PushBookComponent implements OnInit {
       title: this.book.title,
       isbn: this.book.isbn,
       synopsis: this.book.synopsis,
-      author: {
-        id: this.book.author?.id,
-        nameSurname: this.authorName,
-      },
-      editorial: {
-        id: this.book.editorial?.id,
-        name: this.editorialName,
-      },
+      author: this.book.author,
+      editorial: this.book.editorial,
       user: {
         id: this.book.user?.id,
         name: this.book.user?.name,

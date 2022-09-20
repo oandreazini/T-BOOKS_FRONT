@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // Components
-import { AdminPanelAuthorComponent } from './admin-panel-author/admin-panel-author.component';
 import { AdminPanelBooksComponent } from './admin-panel-books/admin-panel-books.component';
-import { AdminPanelEditorialComponent } from './admin-panel-editorial/admin-panel-editorial.component';
 import { AdminPanelLoanComponent } from './admin-panel-loan/admin-panel-loan.component';
 import { AdminPanelUsersComponent } from './admin-panel-users/admin-panel-users.component';
 import { HomeComponent } from './home/home.component';
@@ -17,10 +15,8 @@ import { PushBookComponent } from './push-book/push-book.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
-import { ModAuthorComponent } from './mod-author/mod-author.component';
 import { ModUsersComponent } from './mod-users/mod-users.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
-import { ModEditorialComponent } from './mod-editorial/mod-editorial.component';
 import { ModBooksComponent } from './mod-books/mod-books.component';
 import { SearchBookComponent } from './search-book/search-book.component';
 
@@ -34,16 +30,8 @@ const routes: Routes = [
     component: BooksComponent
   },
   {
-    path: 'adminPanelAuthor',
-    component: AdminPanelAuthorComponent
-  },
-  {
     path: 'adminPanelBooks',
     component: AdminPanelBooksComponent
-  },
-  {
-    path: 'adminPanelEditorial',
-    component: AdminPanelEditorialComponent
   },
   {
     path: 'adminPanelLoan',
@@ -86,16 +74,8 @@ const routes: Routes = [
     component: WriteCommentComponent
   },
   {
-    path: 'mod_author/:id',
-    component: ModAuthorComponent
-  },
-  {
     path: 'mod_books/:id',
     component: ModBooksComponent
-  },
-  {
-    path: 'mod_editorial/:id',
-    component: ModEditorialComponent
   },
   {
     path: 'mod_loan/:id',
