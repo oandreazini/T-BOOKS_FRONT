@@ -81,7 +81,6 @@ export class ModBooksComponent implements OnInit {
   }
 
   reload(): void {
-    window.location.assign('/adminPanelBooks');
+    window.location.assign('');
   }
-
 }
