@@ -7,18 +7,17 @@ const USER_KEY = 'auth-user';
 const ROLES_KEY = 'auth-roles';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenStorageService {
-
-  constructor(private authService: AuthService, public router: Router) { }
+  constructor(private authService: AuthService, public router: Router) {}
 
   signOut(): void {
     window.sessionStorage.clear();
   }
 
   public saveToken(token: string): void {
-    console.log("saveToken: "+ token)
+    console.log('saved Token: ' + token);
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
@@ -27,37 +26,23 @@ export class TokenStorageService {
     return window.sessionStorage.getItem(TOKEN_KEY);
   }
 
-  public saveUser(user: any): void {
+  public saveUser(userId: any): void {
+    console.log('saved user: ' + userId);
     window.sessionStorage.removeItem(USER_KEY);
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
-    this.setRoles();
+    window.sessionStorage.setItem(USER_KEY, userId);
   }
 
   public getUser(): any {
-    const user = window.sessionStorage.getItem(USER_KEY);
-    if(user) {
-      return JSON.parse(user);
-    }
-
-    return {};
+    return window.sessionStorage.getItem(USER_KEY);
   }
 
-  public setRoles() {
-    const user = this.getUser().replace(/['"]+/g, '');
-
-    this.authService.findRole(user).subscribe(
-      data => {
-        window.sessionStorage.removeItem(ROLES_KEY);
-        window.sessionStorage.setItem(ROLES_KEY,JSON.stringify(data["role"]));
-      },
-      error => {
-        console.log("Error");
-      }
-    );
+  public saveRoles(roles: any): void {
+    console.log('saved role: ' + roles);
+    window.sessionStorage.removeItem(ROLES_KEY);
+    window.sessionStorage.setItem(ROLES_KEY, JSON.stringify(roles));
   }
 
   public getRoles() {
     return window.sessionStorage.getItem(ROLES_KEY);
   }
-
 }

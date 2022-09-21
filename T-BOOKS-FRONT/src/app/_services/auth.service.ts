@@ -5,45 +5,50 @@ import { Observable } from 'rxjs';
 const AUTH_API = 'https://rts-tbooks-bbdd.herokuapp.com/';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'applicatoin/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'applicatoin/json' }),
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   user: any = null;
 
   login(username: string, password: string): Observable<any> {
-  this.user = null;
-
-  this.user = {
-    "username": username,
-    "password": password
-  };
-  return this.http.post(AUTH_API + 'login', JSON.stringify(this.user),{headers: {'Content-Type': 'application/json'}});
-  }
-
-  register(name: string, email: string, phone:string, city: string, username: string , password: string, role: string): Observable<any> {
     this.user = null;
 
     this.user = {
-      "name": name,
-      "email": email,
-      "phone": phone,
-      "city": city,
-      "username": username,
-      "password": password
+      username: username,
+      password: password,
     };
-    return this.http.post(AUTH_API + 'register', JSON.stringify(this.user),{headers: {'Content-Type': 'application/json'}});
+    return this.http.post(AUTH_API + 'login', JSON.stringify(this.user), {
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 
-  findRole(idUser: string): Observable<any> {
-    return this.http.get(AUTH_API + "users/username/" + idUser);
+  register(
+    name: string,
+    email: string,
+    phone: string,
+    city: string,
+    username: string,
+    password: string,
+    role: string
+  ): Observable<any> {
+    this.user = null;
+
+    this.user = {
+      name: name,
+      email: email,
+      phone: phone,
+      city: city,
+      username: username,
+      password: password,
+    };
+    return this.http.post(AUTH_API + 'register', JSON.stringify(this.user), {
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
-
-
 }

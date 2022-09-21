@@ -29,10 +29,10 @@ export class AppComponent {
 
   logout(): void {
     this.tokenStorageService.signOut();
-    window.location.reload();
+    this.reload();
   }
 
   reload(): void{
-      window.location.assign("/books");
+    window.location.assign("login");
   }
 }

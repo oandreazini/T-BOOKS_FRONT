@@ -43,10 +43,9 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     this.authService.login(this.form.username, this.form.password).subscribe(
       (data) => {
-        this.tokenStorage.saveToken(
-          JSON.stringify(data['token']).replace(/['"]+/g, '')
-        );
-        this.tokenStorage.saveUser(this.form.username);
+        this.tokenStorage.saveToken(JSON.stringify(data['token']).replace(/['"]+/g, ''));
+        this.tokenStorage.saveUser(JSON.stringify(data['userId']).replace(/['"]+/g, ''));
+        this.tokenStorage.saveRoles(JSON.stringify(data['roles']).replace(/['"]+/g, ''));
         this.showToast();
         setTimeout(() => {
           this.usernameView = this.form.username;
@@ -76,6 +75,6 @@ export class LoginComponent implements OnInit {
   }
 
   reload(): void {
-    window.location.assign('/');
+    window.location.assign('');
   }
 }
