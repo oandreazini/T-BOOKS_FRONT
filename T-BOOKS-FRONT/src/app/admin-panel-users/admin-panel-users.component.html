@@ -6,6 +6,11 @@
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" class="table table-striped table-bordered mt-3 table-responsive-sm">
 
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef> Nombre </th>
                 <td mat-cell *matCellDef="let element"> {{element.name}} </td>
@@ -35,7 +40,26 @@
                 <th mat-header-cell *matHeaderCellDef> Acción </th>
                 <td mat-cell *matCellDef="let element">
                     <button class="btn btn-success" routerLink="/mod_users/{{element.id}}"><i class="bi bi-pencil-square"></i></button>
-                    <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+                      class="bi bi-trash-fill"></i></button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Eliminando usuario...</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Estás apunto de eliminar el usuario con id: {{element.id}}, ¿estás seguro que quieres hacer esto?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger px-4" (click)="deleteUser(element.id)">Sí</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, me arrepiento</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </ng-container>
 

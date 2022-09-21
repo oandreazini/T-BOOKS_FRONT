@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Loan } from '../models/loan.model';
 import { LoansService } from '../services/loans.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ModLoanComponent implements OnInit {
   };
   message = '';
 
-  constructor(private loanService: LoansService,  private router: Router, private activateRoute: ActivatedRoute) { }
+  constructor(private loanService: LoansService,  private router: Router, private activateRoute: ActivatedRoute, private toastService: HotToastService) { }
 
   ngOnInit(): void {
     this.message ='';
@@ -44,15 +45,31 @@ export class ModLoanComponent implements OnInit {
     this.loanService.update(this.loan.id, this.loan)
     .subscribe(
       response => {
-        console.log(response);
         this.message = response.message ? response.message: "The status was updated successfully";
+        this.showToast();
+        setTimeout(() => {
+          this.reload();
+        }, 1000);
       },
       error => {console.log(error)}
     );
   }
 
-  reload(): void{
-    window.location.assign("/adminPanelLoan");
+  showToast() {
+    this.toastService.show('Los cambios se han actualizado con éxito.', {
+      position: 'top-right',
+      duration: 5000,
+      style: {
+        border: '1px solid #badbcc',
+        background: '#d1e7dd',
+        padding: '16px',
+        color: '#0f5132',
+      },
+    });
+  }
+
+  reload(): void {
+    window.location.assign('/adminPanelLoan');
   }
 }
 

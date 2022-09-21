@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { Book } from '../models/book.model';
 import { BooksService } from '../services/books.service';
 
@@ -28,7 +29,7 @@ export class ModBooksComponent implements OnInit {
   };
   message = '';
 
-  constructor(private bookService: BooksService, private router: Router, private activateRoute: ActivatedRoute) {}
+  constructor(private bookService: BooksService, private router: Router, private activateRoute: ActivatedRoute, private toastService: HotToastService) {}
 
   ngOnInit(): void {
     this.message = '';
@@ -54,12 +55,33 @@ export class ModBooksComponent implements OnInit {
     this.bookService.update(this.book.id, this.book)
     .subscribe(
       response => {
-        console.log(response);
         this.message = response.message ? response.message : "The status was updated successfully";
+        this.showToast();
+        setTimeout(() => {
+          this.reload();
+        }, 1000);
       },
       error => {
         console.log(error);
       }
     );
   }
+
+  showToast() {
+    this.toastService.show('Los cambios se han actualizado con éxito.', {
+      position: 'top-right',
+      duration: 5000,
+      style: {
+        border: '1px solid #badbcc',
+        background: '#d1e7dd',
+        padding: '16px',
+        color: '#0f5132',
+      },
+    });
+  }
+
+  reload(): void {
+    window.location.assign('/adminPanelBooks');
+  }
+
 }
