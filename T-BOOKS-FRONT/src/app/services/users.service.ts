@@ -32,4 +32,19 @@ export class UsersService {
   delete(id: any): Observable<any>{
     return this.http.delete(`${baseURL}/${id}`);
   }
+
+  getByUsername(username: any): Observable<any>{
+    return this.http.get(`${baseURL}/username/${username}`);
+  }
+
+  getByEmail(email: any): Observable<any>{
+    return this.http.get(`${baseURL}/email/${email}`);
+  }
+
+  getByPhone(phone: any): Observable<any>{
+    return this.http.get(`${baseURL}/phone/${phone}`);
+  }
+
+
+
 }

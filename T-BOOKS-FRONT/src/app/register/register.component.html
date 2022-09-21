@@ -6,35 +6,42 @@
                 <div class="mb-3 mt-5">
                     <label for="usuario" class="form-label">Usuario <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="usuario" required [(ngModel)]="form.username" name="username">
+                    <p class="text-danger mb-3">{{message1}}</p>
                 </div>
                 <div class="mb-3">
                     <label for="contraseña" class="form-label">Contraseña <span class="text-danger">*</span></label>
                     <input type="password" id="contraseña" class="form-control" required [(ngModel)]="form.password" name="password">
+                    <p class="text-danger mb-3">{{message2}}</p>
                 </div>
                 <div class="mb-3">
                     <label for="vcontraseña" class="form-label">Verifica contraseña <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" id="vcontraseña">
+                    <input type="password" class="form-control" id="vcontraseña" required [(ngModel)]="form.vpassword" name="vpassword">
+                    <p class="text-danger mb-3">{{message7}}</p>
                 </div>
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="nombre" required [(ngModel)]="form.name" name="name">
+                    <p class="text-danger mb-3">{{message3}}</p>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo electrónico <span class="text-danger">*</span></label>
                     <input type="email" class="form-control" id="email" required [(ngModel)]="form.email" name="email">
+                    <p class="text-danger mb-3">{{message4}}</p>
                 </div>
-                <div class="mb-3 pb-3">
+                <div class="mb-3">
                     <label for="telefono" class="form-label">Teléfono <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="telefono" required [(ngModel)]="form.phone" name="phone">
+                    <p class="text-danger mb-3">{{message5}}</p>
                 </div>
                 <div class="mb-3 pb-3">
                     <label for="ciudad" class="form-label">Ciudad <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="ciudad" required [(ngModel)]="form.city" name="city">
+                    <p class="text-danger mb-3">{{message6}}</p>
                 </div>
 
 
                 <p class="mb-4"> <span class="text-danger">*</span> Campo Obligatorio</p>
-                <button class="btn btn-pink rounded-1 ">Acceder</button>
+                <button class="btn btn-pink rounded-1" (click)="validateForm()">Acceder</button>
             </div>
             <div class="col-md-2 col-sm-1"></div>
         </div>
