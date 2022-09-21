@@ -31,4 +31,8 @@ export class LoansService {
   delete(id: any): Observable<any>{
     return this.http.delete(`${baseUrl}/${id}`);
   }
+
+  returnLoanByBook(id: any): Observable<Loan[]> {
+    return this.http.get<Loan[]>(`${baseUrl}/book/${id}`);
+  }
 }

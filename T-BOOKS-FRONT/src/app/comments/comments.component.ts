@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { LoansService } from '../services/loans.service';
 
 @Component({
@@ -8,17 +9,17 @@ import { LoansService } from '../services/loans.service';
 })
 export class CommentsComponent implements OnInit {
 
-  loan: any;
+  id: any;
+  loans: any;
 
-  constructor(private loanService: LoansService) { }
+  constructor(private loanService: LoansService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.loanService.returnAllLoans()
-    .subscribe(
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.loanService.returnLoanByBook(this.id).subscribe(
       result => {
-        this.loan = result;
+        this.loans = result;
         console.log(result);
-
       },
       error => {
         console.log(error);
