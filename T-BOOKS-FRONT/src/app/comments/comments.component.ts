@@ -19,7 +19,6 @@ export class CommentsComponent implements OnInit {
     this.loanService.returnLoanByBook(this.id).subscribe(
       result => {
         this.loans = result;
-        console.log(result);
       },
       error => {
         console.log(error);
