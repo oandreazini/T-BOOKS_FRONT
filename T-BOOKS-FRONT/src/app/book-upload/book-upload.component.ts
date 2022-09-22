@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { HotToastService } from '@ngneat/hot-toast';
+import { DialogBooksComponent } from '../dialog-books/dialog-books.component';
+import { DialogMybooksComponent } from '../dialog-mybooks/dialog-mybooks.component';
 import { BooksService } from '../services/books.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -12,16 +15,27 @@ export class BookUploadComponent implements OnInit {
   books: any;
 
   userId: any;
+  id: any;
+  book: any;
 
   constructor(
     private booksService: BooksService,
     private tokenStorage: TokenStorageService,
-    private toastService: HotToastService
+    private toastService: HotToastService,
+    public dialog: MatDialog
   ) {}
+
+  openDialog(id: any, book:any){
+    let dialogRef = this.dialog.open(DialogMybooksComponent, {data: {idbook: id, name: book}});
+
+    dialogRef.afterClosed().subscribe(result =>{
+      this.id = result;
+      this.deleteBook();
+    });
+  }
 
   ngOnInit(): void {
     this.userId = this.tokenStorage.getUser();
-    console.log('user ID: ' + this.userId);
 
     this.booksService.getByBooksByUser(this.userId).subscribe(
       (result) => {
@@ -33,8 +47,8 @@ export class BookUploadComponent implements OnInit {
     );
   }
 
-  deleteBook(id: any): void {
-    this.booksService.delete(id).subscribe(
+  deleteBook(): void {
+    this.booksService.delete(this.id).subscribe(
       (response) => {
         this.showToast();
         setTimeout(() => {
