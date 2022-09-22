@@ -1,19 +1,20 @@
 export class PushBook {
   title?: string;
   isbn?: string;
+  synopsis?: string;
   author?: string;
   editorial?: string;
-  synopsis?: string;
   usuario?: {
     id?: string;
     name?: string;
     email?: string;
     phone?: string;
+    city?: string,
     username?: string;
     password?: string;
-    roles?: {
+    roles?: [{
       id?: string;
       name?: string;
-    };
+    }];
   };
 }

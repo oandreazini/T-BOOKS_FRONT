@@ -9,21 +9,26 @@ import { TokenStorageService } from '../_services/token-storage.service';
   styleUrls: ['./push-book.component.css'],
 })
 export class PushBookComponent implements OnInit {
-  authorName?: string;
-  editorialName?: string;
 
   book: PushBook = {
     title: '',
     isbn: '',
+    synopsis: '',
     author: '',
     editorial: '',
-    synopsis: '',
     usuario: {
       id: '',
-      roles: {
+      name: '',
+      email: '',
+      phone: '',
+      city: '',
+      username: '',
+      password: '',
+      roles: [{
         id: '',
-      }
-    },
+        name: ''
+      }]
+    }
   };
 
   constructor(private bookService: BooksService, private tokenStorage: TokenStorageService) {}
@@ -43,19 +48,47 @@ export class PushBookComponent implements OnInit {
     const data = {
       title: this.book.title,
       isbn: this.book.isbn,
+      synopsis: this.book.synopsis,
       author: this.book.author,
       editorial: this.book.editorial,
-      synopsis: this.book.synopsis,
       usuario: {
         id: this.tokenStorage.getUser(),
-        roles: {
-          id: idRole
-        }
+        name: this.book.usuario?.name,
+        email: this.book.usuario?.email,
+        phone: this.book.usuario?.phone,
+        city: this.book.usuario?.city,
+        username: this.book.usuario?.username,
+        password: this.book.usuario?.password,
+        roles: [{
+          id: idRole,
+          name: role
+        }]
       },
     };
 
+    // const data = {
+    //   title: "Cazadores de sombras 1",
+    //   isbn: "9788408083801",
+    //   synopsis: "Chica se enamora de un chico no muy normal cuando mata a otro chico no muy normal en una discoteca de Nueva York.",
+    //   author: "Cassandra Clare",
+    //   editorial: "Destino",
+    //   usuario: {
+    //     id: "21",
+    //     name: "Roger",
+    //     email: "roger@gmail.com",
+    //     phone: "777777777",
+    //     city: "Calafell",
+    //     username: "roger",
+    //     password: "$2a$12$1ovVlPGO/oVF.Q0ofgTB2Ov5GO.BOU3/mErUmXDG.tq4vY8Vo.4Fi",
+    //     roles: [{
+    //       id: "1",
+    //       name: "ROLE_ADMIN"
+    //     }]
+    //   }
+    // };
+
     console.log("data to introduce: ");
-    console.log(data)
+    console.log(data);
 
     this.bookService.create(data)
     .subscribe(
