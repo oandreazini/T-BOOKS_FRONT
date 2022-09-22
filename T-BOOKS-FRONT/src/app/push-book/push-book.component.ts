@@ -18,16 +18,10 @@ export class PushBookComponent implements OnInit {
     author: '',
     editorial: '',
     synopsis: '',
-    user: {
+    usuario: {
       id: '',
-      name: '',
-      email: '',
-      phone: '',
-      username: '',
-      password: '',
       roles: {
         id: '',
-        name: ''
       }
     },
   };
@@ -38,12 +32,12 @@ export class PushBookComponent implements OnInit {
 
   saveBook(): void {
     let role = this.tokenStorage.getRoles();
-    let idRole = 1;
+    let idRole = "1";
 
     if(role=="ROLE_ADMIN") {
-      idRole = 1;
+      idRole = "1";
     } else if (role=="ROLE_USER") {
-      idRole = 11;
+      idRole = "11";
     }
 
     const data = {
@@ -52,20 +46,16 @@ export class PushBookComponent implements OnInit {
       author: this.book.author,
       editorial: this.book.editorial,
       synopsis: this.book.synopsis,
-      user: {
+      usuario: {
         id: this.tokenStorage.getUser(),
         roles: {
           id: idRole
         }
       },
     };
-    console.log("Title: "+data.title);
-    console.log("ISBN: "+data.isbn);
-    console.log("Author: "+data.author);
-    console.log("Editorial: "+data.editorial);
-    console.log("Sinopsis: "+data.synopsis);
-    console.log("UserID: "+data.user.id);
-    console.log("roleID: "+data.user.roles.id);
+
+    console.log("data to introduce: ");
+    console.log(data)
 
     this.bookService.create(data)
     .subscribe(

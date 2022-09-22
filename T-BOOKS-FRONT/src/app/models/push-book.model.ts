@@ -4,16 +4,16 @@ export class PushBook {
   author?: string;
   editorial?: string;
   synopsis?: string;
-  user?: {
-    id: any;
-    name: string;
-    email: string;
-    phone: string;
-    username: string;
-    password: string;
-    roles: {
-      id: any;
-      name: string;
+  usuario?: {
+    id?: string;
+    name?: string;
+    email?: string;
+    phone?: string;
+    username?: string;
+    password?: string;
+    roles?: {
+      id?: string;
+      name?: string;
     };
   };
 }
