@@ -81,6 +81,6 @@ export class ModBooksComponent implements OnInit {
   }
 
   reload(): void {
-    window.location.assign('');
+    window.location.assign('bookUpload');
   }
 }
