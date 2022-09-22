@@ -23,10 +23,10 @@ export class WriteCommentComponent implements OnInit {
       city: '',
       username: '',
       password: '',
-      roles: {
+      roles: [{
         id: '',
         name: '',
-      },
+      }],
     },
     book: {
       id: '',
@@ -43,10 +43,10 @@ export class WriteCommentComponent implements OnInit {
         city: '',
         username: '',
         password: '',
-        roles: {
+        roles: [{
           id: '',
           name: '',
-        },
+        }],
       },
     },
   };

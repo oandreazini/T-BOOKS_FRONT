@@ -1,42 +1,45 @@
 export class Loan {
-
-  id?: any;
-  start?: any;
-  finish?: any;
-  valuation?: any;
+  id?: string;
+  start?: string;
+  finish?: string;
+  valuation?: string;
   comment?: string;
   user?: {
-    id?: any;
+    id?: string;
     name?: string;
     email?: string;
     phone?: string;
     city?: string;
     username?: string;
     password?: string;
-    roles?: {
-      id?: any;
-      name?: string;
-    };
+    roles?: [
+      {
+        id?: string;
+        name?: string;
+      }
+    ];
   };
   book?: {
-    id?: any;
+    id?: string;
     title?: string;
     isbn?: string;
     synopsis?: string;
     author?: string;
     editorial?: string;
     usuario?: {
-      id?: any;
+      id?: string;
       name?: string;
       email?: string;
       phone?: string;
       city?: string;
       username?: string;
       password?: string;
-      roles?: {
-        id?: any;
-        name?: string;
-      };
+      roles?: [
+        {
+          id?: string;
+          name?: string;
+        }
+      ];
     };
   };
 }
