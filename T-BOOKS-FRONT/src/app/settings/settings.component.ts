@@ -82,20 +82,22 @@ export class SettingsComponent implements OnInit {
   }
 
   checkPassword() {
-    console.log("pass 1: "  +this.form.password);
-    console.log("pass 2: "  +this.form.newpassword);
-    console.log("pass 3: "  +this.form.newpasswordv);
+    console.log("pass 1: "  + this.form.password);
+    console.log("pass 2: "  + this.form.newpassword);
+    console.log("pass 3: "  + this.form.newpasswordv);
 
     if(this.form.newpassword != this.form.newpasswordv && this.form.password != this.user.password){
       this.equals = false;
-    } else{
-      this.userService.update(this.tokenStorage.getUser(), this.user).subscribe(
+    } else {
+      this.userService.updatePass(this.tokenStorage.getUser(), this.user).subscribe(
         response => {
           this.message = response.message ? response.message : "The status was updated successfully";
           this.showToast();
           setTimeout(() => {
             window.location.reload();
-          }, 1000);
+          }, 10000);
+          console.log("new pass saved:");
+          console.log(this.user.password);
         },
         error => {
           console.log(error);

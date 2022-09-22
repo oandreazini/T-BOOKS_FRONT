@@ -22,7 +22,7 @@ export class UsersService {
   }
 
   create(data: any): Observable<any>{
-    return this.http.post('https://rts-tbooks-bbdd.herokuapp.com/register',data);
+    return this.http.post('https://rts-tbooks-bbdd.herokuapp.com/register', data);
   }
 
   update(id: any, data: any): Observable<any>{
@@ -37,14 +37,9 @@ export class UsersService {
     return this.http.get(`${baseURL}/username/${username}`);
   }
 
-  // getByEmail(email: any): Observable<User>{
-  //   return this.http.get(`${baseURL}/email/${email}`);
-  // }
-
-  // getByPhone(phone: any): Observable<User>{
-  //   return this.http.get(`${baseURL}/phone/${phone}`);
-  // }
-
+  updatePass(id: any, data: any): Observable<any>{
+    return this.http.put(`${baseURL}/pass/${id}`, data);
+  }
 
 
 }
