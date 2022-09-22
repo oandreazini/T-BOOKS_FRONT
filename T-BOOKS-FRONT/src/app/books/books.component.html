@@ -2,9 +2,9 @@
   <p class="fs-1 text-pink mb-2">Libros disponibles</p>
   <hr class="mt-0 mb-4">
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Introduce el título del libro" [(ngModel)]="title" />
+    <input type="text" class="form-control" placeholder="Introduce el título, el autor o el ISBN del libro" [(ngModel)]="search"/>
     <div class="input-group-append">
-      <button class="btn btn-pink ms-5" type="button" (click)="searchName()">Búsqueda</button>
+      <button class="btn btn-pink ms-5" type="button" (click)="searchName()" (click)="searchAuthor()" (click)="searchIsbn()">Búsqueda</button>
     </div>
   </div>
   <div class="row">

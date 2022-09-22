@@ -35,4 +35,9 @@ export class AppComponent {
   reload(): void{
     window.location.assign("login");
   }
+
+  reloadBooks(): void{
+    window.location.assign("books");
+  }
+
 }

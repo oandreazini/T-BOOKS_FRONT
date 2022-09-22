@@ -14,8 +14,8 @@ export class BooksComponent implements OnInit {
 
   currentBooks: Book = {};
   currentIndex = -1;
-  title = '';
-
+  search = '';
+ 
   constructor(private booksService: BooksService) {}
 
   ngOnInit() {
@@ -35,7 +35,37 @@ export class BooksComponent implements OnInit {
     this.currentBooks = {};
     this.currentIndex = -1;
 
-    this.booksService.getByTitle(this.title)
+    this.booksService.getByTitle(this.search)
+    .subscribe(
+      data => {
+        this.books = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+  searchAuthor(): void{
+    this.currentBooks = {};
+    this.currentIndex = -1;
+
+    this.booksService.getByAuthor(this.search)
+    .subscribe(
+      data => {
+        this.books = data;
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+  searchIsbn(): void{
+    this.currentBooks = {};
+    this.currentIndex = -1;
+
+    this.booksService.getByIsbn(this.search)
     .subscribe(
       data => {
         this.books = data;

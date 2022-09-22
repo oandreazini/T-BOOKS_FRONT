@@ -39,4 +39,12 @@ export class BooksService {
   getByBooksByUser(userId: any): Observable<Book[]>{
     return this.http.get<Book[]>(`${baseUrl}/user/${userId}`);
   }
+
+  getByAuthor(author: any): Observable<Book[]>{
+    return this.http.get<Book[]>(`${baseUrl}/author/${author}`)
+  }
+
+  getByIsbn(isbn: any): Observable<Book[]>{
+    return this.http.get<Book[]>(`${baseUrl}/isbn/${isbn}`)
+  }
 }
