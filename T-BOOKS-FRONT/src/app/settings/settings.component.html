@@ -9,18 +9,18 @@
             <form action="index.html" method="post">
                 <div class="mb-3 mt-2">
                     <label for="password" class="form-label"><i class="bi bi-key"></i> Contraseña actual</label>
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="form.password">
                 </div>
                 <div class="mb-3">
                     <label for="newPassword" class="form-label"><i class="bi bi-shield-lock"></i> Nueva contraseña</label>
-                    <input type="password" class="form-control" id="newPassword">
+                    <input type="password" class="form-control" id="newPassword" name="newpassword" [(ngModel)]="form.newpassword">
                 </div>
                 <div class="mb-3">
                     <label for="verNewPassword" class="form-label"><i class="bi bi-shield-check"></i> Confirma la nueva contraseña</label>
-                    <input type="password" class="form-control" id="verNewPassword">
+                    <input type="password" class="form-control" id="verNewPassword" name="newpasswordv" [(ngModel)]="form.newpasswordv">
                 </div>
 
-                <button class="btn btn-pink rounded-1 mt-3 mb-5">Guardar contraseña</button>
+                <button class="btn btn-pink rounded-1 mt-3 mb-5" (click)="checkPassword()">Guardar contraseña</button>
             </form>
         </div>
 
@@ -33,17 +33,21 @@
             <form action="index.html" method="post">
                 <div class="mb-3 mt-2">
                     <label for="name" class="form-label"><i class="bi bi-person"></i> Nombre</label>
-                    <input type="text" class="form-control" id="name">
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label"><i class="bi bi-envelope"></i> Email</label>
-                    <input type="text" class="form-control" id="email">
+                    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="user.email">
                 </div>
                 <div class="mb-3">
                     <label for="phone" class="form-label"><i class="bi bi-telephone"></i> Teléfono</label>
-                    <input type="text" class="form-control" id="phone">
+                    <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="user.phone">
                 </div>
-                <button class="btn btn-pink rounded-1 mt-3">Guardar datos</button>
+                <div class="mb-3">
+                    <label for="phone" class="form-label"><i class="bi bi-geo-alt"></i> Ciudad</label>
+                    <input type="text" class="form-control" id="city" name="city" [(ngModel)]="user.city">
+                </div>
+                <button class="btn btn-pink rounded-1 mt-3" (click)="updateUser()">Guardar datos</button>
             </form>
         </div>
     </div>

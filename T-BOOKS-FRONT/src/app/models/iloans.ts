@@ -1,40 +1,41 @@
 export interface ILoans {
-  id: number;
-  start: string;
-  finish: string;
-  valuation: number;
-  comment: string;
-  user: {
-    id: number;
-    name: string;
-    email: string;
-    phone: string;
-    city: string;
-    username: string;
-    password: string;
-    role: string;
+  id?: any;
+  start?: string;
+  finish?: string;
+  valuation?: any;
+  comment?: string;
+  user?: {
+    id?: any;
+    name?: string;
+    email?: string;
+    phone?: string;
+    city?: string;
+    username?: string;
+    password?: string;
+    roles?: {
+      id?: any;
+      name?: string;
+    };
   };
-  book: {
-    id: number;
-    title: string;
-    isbn: string;
-    synopsis:string;
-    author: {
-      id: number;
-      nameSurname: string;
-    };
-    editorial: {
-      id: number;
-      name: string;
-    };
-    user: {
-      id: number;
-      name: string;
-      email: string;
-      phone: string;
-      username: string;
-      password: string;
-      role: string;
+  book?: {
+    id?: any;
+    title?: string;
+    isbn?: string;
+    synopsis?: string;
+    author?: string;
+    editorial?: string;
+    usuario?: {
+      id?: any;
+      name?: string;
+      email?: string;
+      phone?: string;
+      city?: string;
+      username?: string;
+      password?: string;
+      roles?: {
+        id?: any;
+        name?: string;
+      };
     };
   }
 
