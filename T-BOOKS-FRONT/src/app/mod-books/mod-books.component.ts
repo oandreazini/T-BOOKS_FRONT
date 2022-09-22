@@ -14,7 +14,7 @@ export class ModBooksComponent implements OnInit {
     title: '',
     isbn: '',
     synopsis: '',
-    author:'',
+    author: '',
     editorial: '',
     user: {
       id: '',
@@ -29,21 +29,27 @@ export class ModBooksComponent implements OnInit {
   };
   message = '';
 
-  constructor(private bookService: BooksService, private router: Router, private activateRoute: ActivatedRoute, private toastService: HotToastService) {}
+  validation = false;
+  message1: string = '';
+
+  constructor(
+    private bookService: BooksService,
+    private activateRoute: ActivatedRoute,
+    private toastService: HotToastService
+  ) {}
 
   ngOnInit(): void {
     this.message = '';
-    this.getBook(this.activateRoute.snapshot.paramMap.get("id"));
+    this.getBook(this.activateRoute.snapshot.paramMap.get('id'));
   }
 
   getBook(id: any): void {
-    this.bookService.returnBookById(id)
-    .subscribe(
-      data => {
+    this.bookService.returnBookById(id).subscribe(
+      (data) => {
         this.book = data;
         console.log(data);
       },
-      error => {
+      (error) => {
         console.log(error);
       }
     );
@@ -52,19 +58,24 @@ export class ModBooksComponent implements OnInit {
   updateBook(): void {
     this.message = '';
 
-    this.bookService.update(this.book.id, this.book)
-    .subscribe(
-      response => {
-        this.message = response.message ? response.message : "The status was updated successfully";
-        this.showToast();
-        setTimeout(() => {
-          this.reload();
-        }, 1000);
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.book.isbn = this.book.isbn?.replace(/-/g, '');
+   
+    if (this.validation === true) {
+      this.bookService.update(this.book.id, this.book).subscribe(
+        (response) => {
+          this.message = response.message
+            ? response.message
+            : 'The status was updated successfully';
+          this.showToast();
+          setTimeout(() => {
+            this.reload();
+          }, 1000);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
   }
 
   showToast() {
@@ -82,5 +93,22 @@ export class ModBooksComponent implements OnInit {
 
   reload(): void {
     window.location.assign('');
+  }
+
+  validateForm() {
+    const ISBN_REGEX = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
+
+    if (this.validation === false) {
+      if (ISBN_REGEX.test(this.book.isbn?.toString()!)) {
+        this.message1 = '';
+      } else {
+        this.message1 = 'El isbn no coincide';
+      }
+    }
+    if (this.message1 === '') {
+      this.validation = true;
+      this.updateBook();
+    }
+    console.log(this.validation + ' validation');
   }
 }

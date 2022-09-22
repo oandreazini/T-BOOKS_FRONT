@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HotToastService } from '@ngneat/hot-toast';
-import { ConnectableObservable } from 'rxjs';
 import { PushBook } from '../models/push-book.model';
 import { BooksService } from '../services/books.service';
 import { TokenStorageService } from '../_services/token-storage.service';
@@ -47,9 +46,7 @@ export class PushBookComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // console.log(this.form.isbn + ' isbn');
-
-    console.log(this.validation + " validación");
+    console.log(this.validation + ' inicio');
   }
 
   saveBook(): void {
@@ -61,6 +58,8 @@ export class PushBookComponent implements OnInit {
     } else if (role == 'ROLE_USER') {
       idRole = '11';
     }
+
+    this.book.isbn = this.book.isbn?.replace(/-/g, "");
 
     const data = {
       title: this.book.title,
@@ -87,6 +86,7 @@ export class PushBookComponent implements OnInit {
 
     console.log('data to introduce: ');
     console.log(data);
+
     if(this.validation === true){
     this.bookService.create(data).subscribe(
       (response) => {
@@ -120,9 +120,7 @@ export class PushBookComponent implements OnInit {
   }
 
   validateForm() {
-    console.log(this.book.isbn + " isbn book");
-
-    var ISBN_REGEX = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
+    const ISBN_REGEX = /^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/;
 
     if (this.validation === false) {
       if (this.book.title === '' || this.book.title === null) {
@@ -135,11 +133,11 @@ export class PushBookComponent implements OnInit {
       } else{
         this.message2 = '';
       }
-      // if (ISBN_REGEX.test(this.book.isbn)) {
-      //   this.message2 = '';
-      // } else {
-      //   this.message2 = 'El isbn no coincide';
-      // }
+      if (ISBN_REGEX.test(this.book.isbn?.toString()!)) {
+         this.message2 = '';
+      } else {
+       this.message2 = 'El isbn no coincide';
+      }
       if (this.book.editorial === '' || this.book.editorial === null) {
         this.message3 = 'Introduzca una editorial';
       } else {
