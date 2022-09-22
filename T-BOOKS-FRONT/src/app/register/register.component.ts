@@ -127,8 +127,6 @@ export class RegisterComponent implements OnInit {
     if (this.validation === false) {
       if (this.form.username === null) {
         this.message1 = 'Introduzca un nombre de usuario';
-      } else if(this.found= true) {
-        this.message1 = 'Esta ocupaoo';
       } else {
         this.message1 = '';
       }
@@ -170,47 +168,47 @@ export class RegisterComponent implements OnInit {
       }
     }
     if (
-      this.message1 == '' &&
-      this.message2 == '' &&
-      this.message3 == '' &&
-      this.message4 == '' &&
-      this.message5 == '' &&
-      this.message6 == '' &&
-      this.message7 == ''
+      this.message1 === '' &&
+      this.message2 === '' &&
+      this.message3 === '' &&
+      this.message4 === '' &&
+      this.message5 === '' &&
+      this.message6 === '' &&
+      this.message7 === ''
     ) {
       this.validation = true;
+      this.onSubmit();
     }
-    console.log(this.validation);
-    console.log(this.checkUsernameExist());
+    console.log(this.validation + " validation");
   }
 
-  checkUsernameExist(): void {
-    var username;
+  // checkUsernameExist(): void {
+  //   var username;
 
-     this.userService.getByUsername(this.form.username).subscribe(
-      (result) => {
-        username = result;
-        console.log(result);
-        this.found = true;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+  //    this.userService.getByUsername(this.form.username).subscribe(
+  //     (result) => {
+  //       username = result;
+  //       console.log(result);
+  //       this.found = true;
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
 
-  checkEmailExist(): void {
-    var username;
+  // checkEmailExist(): void {
+  //   var username;
 
-     this.userService.getByUsername(this.form.username).subscribe(
-      (result) => {
-        username = result;
-        console.log(result);
-        this.found = true;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+  //    this.userService.getByUsername(this.form.username).subscribe(
+  //     (result) => {
+  //       username = result;
+  //       console.log(result);
+  //       this.found = true;
+  //     },
+  //     (error) => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
 }
