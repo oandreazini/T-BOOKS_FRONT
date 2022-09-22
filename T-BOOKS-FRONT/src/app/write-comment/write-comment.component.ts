@@ -15,7 +15,7 @@ export class WriteCommentComponent implements OnInit {
     finish: '',
     valuation: '',
     comment: '',
-    user: {
+    usuario: {
       id: '',
       name: '',
       email: '',
@@ -67,7 +67,6 @@ export class WriteCommentComponent implements OnInit {
     .subscribe(
       data => {
         this.loan = data;
-        // console.log(data);
       },
       error => {
         console.log(error);

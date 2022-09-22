@@ -2,9 +2,9 @@ export class Loan {
   id?: string;
   start?: string;
   finish?: string;
-  valuation?: string;
+  valuation?: any;
   comment?: string;
-  user?: {
+  usuario?: {
     id?: string;
     name?: string;
     email?: string;

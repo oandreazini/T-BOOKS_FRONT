@@ -12,54 +12,103 @@ import { TokenStorageService } from '../_services/token-storage.service';
   styleUrls: ['./info-book.component.css'],
 })
 export class InfoBookComponent implements OnInit {
-  date: Date = new Date();
-  //this.date.getDate() + "-" + this.date.getMonth() + "-" + this.date.getFullYear(),
-  //this.date.getDate() + "-" + (this.date.getMonth()+1) + "-" + this.date.getFullYear(),
+  // date: Date = new Date();
+  // this.date.getDate() + "-" + this.date.getMonth() + "-" + this.date.getFullYear(),
+  // this.date.getDate() + "-" + (this.date.getMonth()+1) + "-" + this.date.getFullYear(),
+  // loan: Loan = {
+  //   id: '',
+  //   start: '',
+  //   finish: '',
+  //   valuation: '',
+  //   comment: '',
+  //   user: {
+  //     id: '',
+  //     name: '',
+  //     email: '',
+  //     phone: '',
+  //     city: '',
+  //     username: '',
+  //     password: '',
+  //     roles: [
+  //       {
+  //         id: '',
+  //         name: '',
+  //       },
+  //     ],
+  //   },
+  //   book: {
+  //     id: '',
+  //     title: '',
+  //     isbn: '',
+  //     synopsis: '',
+  //     author: '',
+  //     editorial: '',
+  //     usuario: {
+  //       id: '',
+  //       name: '',
+  //       email: '',
+  //       phone: '',
+  //       city: '',
+  //       username: '',
+  //       password: '',
+  //       roles: [
+  //         {
+  //           id: '',
+  //           name: '',
+  //         },
+  //       ],
+  //     },
+  //   },
+  // };
+
   loan: Loan = {
-    id: '',
-    start: '',
-    finish: '',
-    valuation: '',
-    comment: '',
-    user: {
-      id: '',
-      name: '',
-      email: '',
-      phone: '',
-      city: '',
-      username: '',
-      password: '',
+    id: '51',
+    start: '22-09-2022',
+    finish: '22-10-2022',
+    valuation: 3.0,
+    comment: 'muy trambolicoooooooooo',
+    usuario: {
+      id: '1',
+      name: 'Barbara',
+      email: 'barbara@prueba.com',
+      phone: '666777666',
+      city: 'Cambrils',
+      username: 'barbara',
+      password: '$2a$12$VfJAkdmh5aim/WaNltJWHuthbxFMHR42Fo9ic6DNKH8/xq0t.2qWq',
       roles: [
         {
-          id: '',
-          name: '',
+          id: '1',
+          name: 'ROLE_ADMIN',
         },
       ],
     },
     book: {
-      id: '',
-      title: '',
-      isbn: '',
-      synopsis: '',
-      author: '',
-      editorial: '',
+      id: '11',
+      title: 'El Hobbit',
+      isbn: '9780261102217',
+      synopsis:
+        'El hobbit Bilbo Bolsón vive una vida tranquila hasta que el mago Gandalf aparece y le encomienda una misión: unirse a un grupo de enanos para recuperar un tesoro que les pertenece.',
+      author: 'J.R.R. Tolkien',
+      editorial: 'HARPERCOLLINS PUB.',
       usuario: {
-        id: '',
-        name: '',
-        email: '',
-        phone: '',
-        city: '',
-        username: '',
-        password: '',
+        id: '11',
+        name: 'Oriol',
+        email: 'oriol@prueba.com',
+        phone: '777666777',
+        city: 'La Selva del Camp',
+        username: 'oriol',
+        password:
+          '$2a$12$rwiKjU6x89W3dYWcNgPNh.ZLc7JhVayHOj7DfTlttOeZFGEwsMTba',
         roles: [
           {
-            id: '',
-            name: '',
+            id: '1',
+            name: 'ROLE_ADMIN',
           },
         ],
       },
     },
   };
+
   submitted = false;
 
   id: any;
@@ -97,49 +146,54 @@ export class InfoBookComponent implements OnInit {
     //   idRole = '11';
     // }
 
-    const data = {
-      id: '51',
-      start: '22-09-2022',
-      finish: '22-10-2022',
-      valuation: '',
-      comment: '',
-      user: {
-        id: '1',
-        name: 'Barbara',
-        email: 'barbara@prueba.com',
-        phone: '666777666',
-        city: 'Cambrils',
-        username: 'barbara',
-        password: '$2a$12$VfJAkdmh5aim/WaNltJWHuthbxFMHR42Fo9ic6DNKH8/xq0t.2qWq',
-        roles: [
-          {
-            id: '1',
-            name: 'ROLE_ADMIN',
-          },
-        ],
-      },
-      book: {
-        id: '11',
-        title: 'El Hobbit',
-        isbn: '9780261102217',
-        synopsis: 'El hobbit Bilbo Bolsón vive una vida tranquila hasta que el mago Gandalf aparece y le encomienda una misión: unirse a un grupo de enanos para recuperar un tesoro que les pertenece.',
-        author: 'J.R.R. Tolkien',
-        editorial: 'HARPERCOLLINS PUB.',
-        usuario: {
-          id: '11',
-          name: 'Oriol',
-          email: 'oriol@prueba.com',
-          phone: '777666777',
-          city: 'La Selva del Camp',
-          username: 'oriol',
-          password: '$2a$12$rwiKjU6x89W3dYWcNgPNh.ZLc7JhVayHOj7DfTlttOeZFGEwsMTba',
-          roles: [{
-            id: '1',
-            name: 'ROLE_ADMIN',
-          }],
-        },
-      },
-    };
+    // const data = {
+    //   id: '51',
+    //   start: '22-09-2022',
+    //   finish: '22-10-2022',
+    //   valuation: 3.0,
+    //   comment: 'muy trambolico',
+    //   usuario: {
+    //     id: '1',
+    //     name: 'Barbara',
+    //     email: 'barbara@prueba.com',
+    //     phone: '666777666',
+    //     city: 'Cambrils',
+    //     username: 'barbara',
+    //     password:
+    //       '$2a$12$VfJAkdmh5aim/WaNltJWHuthbxFMHR42Fo9ic6DNKH8/xq0t.2qWq',
+    //     roles: [
+    //       {
+    //         id: '1',
+    //         name: 'ROLE_ADMIN',
+    //       },
+    //     ],
+    //   },
+    //   book: {
+    //     id: '11',
+    //     title: 'El Hobbit',
+    //     isbn: '9780261102217',
+    //     synopsis:
+    //       'El hobbit Bilbo Bolsón vive una vida tranquila hasta que el mago Gandalf aparece y le encomienda una misión: unirse a un grupo de enanos para recuperar un tesoro que les pertenece.',
+    //     author: 'J.R.R. Tolkien',
+    //     editorial: 'HARPERCOLLINS PUB.',
+    //     usuario: {
+    //       id: '11',
+    //       name: 'Oriol',
+    //       email: 'oriol@prueba.com',
+    //       phone: '777666777',
+    //       city: 'La Selva del Camp',
+    //       username: 'oriol',
+    //       password:
+    //         '$2a$12$rwiKjU6x89W3dYWcNgPNh.ZLc7JhVayHOj7DfTlttOeZFGEwsMTba',
+    //       roles: [
+    //         {
+    //           id: '1',
+    //           name: 'ROLE_ADMIN',
+    //         },
+    //       ],
+    //     },
+    //   },
+    // };
 
     // const data = {
     //   start:
@@ -186,9 +240,9 @@ export class InfoBookComponent implements OnInit {
     // };
     console.log('data:');
 
-    console.log(data);
+    console.log(this.loan);
 
-    this.loanService.create(data).subscribe(
+    this.loanService.create(this.loan).subscribe(
       (response) => {
         console.log(response);
         this.submitted = true;
