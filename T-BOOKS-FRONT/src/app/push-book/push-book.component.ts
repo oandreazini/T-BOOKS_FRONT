@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotToastService } from '@ngneat/hot-toast';
 import { PushBook } from '../models/push-book.model';
 import { BooksService } from '../services/books.service';
 import { TokenStorageService } from '../_services/token-storage.service';
@@ -31,7 +32,7 @@ export class PushBookComponent implements OnInit {
     }
   };
 
-  constructor(private bookService: BooksService, private tokenStorage: TokenStorageService) {}
+  constructor(private bookService: BooksService, private tokenStorage: TokenStorageService, private toastService: HotToastService) {}
 
   ngOnInit(): void {}
 
@@ -66,38 +67,37 @@ export class PushBookComponent implements OnInit {
       },
     };
 
-    // const data = {
-    //   title: "Cazadores de sombras 1",
-    //   isbn: "9788408083801",
-    //   synopsis: "Chica se enamora de un chico no muy normal cuando mata a otro chico no muy normal en una discoteca de Nueva York.",
-    //   author: "Cassandra Clare",
-    //   editorial: "Destino",
-    //   usuario: {
-    //     id: "21",
-    //     name: "Roger",
-    //     email: "roger@gmail.com",
-    //     phone: "777777777",
-    //     city: "Calafell",
-    //     username: "roger",
-    //     password: "$2a$12$1ovVlPGO/oVF.Q0ofgTB2Ov5GO.BOU3/mErUmXDG.tq4vY8Vo.4Fi",
-    //     roles: [{
-    //       id: "1",
-    //       name: "ROLE_ADMIN"
-    //     }]
-    //   }
-    // };
-
     console.log("data to introduce: ");
     console.log(data);
 
     this.bookService.create(data)
     .subscribe(
       response => {
-        console.log(response);
+        this.showToast();
+        setTimeout(() => {
+          this.reload();
+        }, 1000);
       },
       error => {
         console.log(error);
       }
     );
+  }
+
+  showToast() {
+    this.toastService.show('Libro añadido con éxito.', {
+      position: 'top-right',
+      duration: 5000,
+      style: {
+        border: '1px solid #badbcc',
+        background: '#d1e7dd',
+        padding: '16px',
+        color: '#0f5132',
+      },
+    });
+  }
+
+  reload(): void {
+    window.location.assign('/bookUpload');
   }
 }
