@@ -79,28 +79,6 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  saveUser(): void {
-    const data = {
-      name: this.user.name,
-      email: this.user.email,
-      phone: this.user.phone,
-      city: this.user.city,
-      username: this.user.username,
-      password: this.user.password,
-      role: this.user.role,
-    };
-
-    this.userService.create(data).subscribe(
-      (response) => {
-        console.log(response);
-        this.submitted = true;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
-
   showToast() {
     this.toastService.show('Te has registrado con éxito.', {
       position: 'top-right',
@@ -125,12 +103,12 @@ export class RegisterComponent implements OnInit {
     var PHONE_REGEX = /^(?:(?:\+?[0-9]{2,4})?[ ]?[6789][0-9 ]{8,13})*$/;
 
     if (this.validation === false) {
-      if (this.form.username === null) {
+      if (this.form.username === null || this.form.username == "") {
         this.message1 = 'Introduzca un nombre de usuario';
       } else {
         this.message1 = '';
       }
-      if (this.form.password === null) {
+      if (this.form.password === null || this.form.password == "") {
         this.message2 = 'Introduzca una contraseña';
       } else {
         this.message2 = '';
@@ -140,12 +118,12 @@ export class RegisterComponent implements OnInit {
       } else {
         this.message7 = '';
       }
-      if (this.form.name === null) {
+      if (this.form.name === null || this.form.name ==  "") {
         this.message3 = 'Introduzca un nombre';
       } else {
         this.message3 = '';
       }
-      if (this.form.email === null) {
+      if (this.form.email === null || this.form.email == "") {
         this.message4 = 'Introduzca un correo';
       }
       if (EMAIL_REGEX.test(this.form.email)) {
@@ -153,7 +131,7 @@ export class RegisterComponent implements OnInit {
       } else {
         this.message4 = 'El correo es incorrecto';
       }
-      if (this.form.phone === null) {
+      if (this.form.phone === null || this.form.phone == "") {
         this.message5 = 'Introduzca un número de teléfono';
       }
       if (PHONE_REGEX.test(this.form.phone)) {
@@ -161,7 +139,7 @@ export class RegisterComponent implements OnInit {
       } else {
         this.message5 = 'El télefono es incorrecto';
       }
-      if (this.form.city === null) {
+      if (this.form.city === null || this.form.city == "") {
         this.message6 = 'Introduzca un ciudad';
       } else {
         this.message6 = '';
@@ -181,34 +159,4 @@ export class RegisterComponent implements OnInit {
     }
     console.log(this.validation + " validation");
   }
-
-  // checkUsernameExist(): void {
-  //   var username;
-
-  //    this.userService.getByUsername(this.form.username).subscribe(
-  //     (result) => {
-  //       username = result;
-  //       console.log(result);
-  //       this.found = true;
-  //     },
-  //     (error) => {
-  //       console.log(error);
-  //     }
-  //   );
-  // }
-
-  // checkEmailExist(): void {
-  //   var username;
-
-  //    this.userService.getByUsername(this.form.username).subscribe(
-  //     (result) => {
-  //       username = result;
-  //       console.log(result);
-  //       this.found = true;
-  //     },
-  //     (error) => {
-  //       console.log(error);
-  //     }
-  //   );
-  // }
 }
