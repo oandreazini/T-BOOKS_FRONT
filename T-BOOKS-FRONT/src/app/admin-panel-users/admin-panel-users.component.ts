@@ -1,8 +1,10 @@
 import { Component, OnInit,AfterViewInit,ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { DialogExampleComponent } from '../dialog-example/dialog-example.component';
 import { IUsers } from '../models/iusers';
 import { UsersService } from '../services/users.service';
 
@@ -16,6 +18,7 @@ export class AdminPanelUsersComponent implements OnInit {
   ELEMENT_DATA!: IUsers[];
   displayedColumns: string[] = ['id', 'name', 'username', 'email','phone','city','action'];
   dataSource = new MatTableDataSource<IUsers>(this.ELEMENT_DATA);
+  id: any;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -24,7 +27,17 @@ export class AdminPanelUsersComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(private usersService: UsersService, private router: Router, private toastService: HotToastService) { }
+  constructor(private usersService: UsersService, private router: Router, private toastService: HotToastService,
+    public dialog: MatDialog) { }
+
+    openDialog(id: any){
+      let dialogRef = this.dialog.open(DialogExampleComponent, {data: {iduser: id}});
+
+      dialogRef.afterClosed().subscribe(result =>{
+        this.id = result;
+        this.deleteUser();
+      });
+    }
 
   ngOnInit(): void {
     this.getAllUsers();
@@ -35,8 +48,8 @@ export class AdminPanelUsersComponent implements OnInit {
     resp.subscribe(report => this.dataSource.data = report as IUsers[]);
   }
 
-  deleteUser(id: any){
-    this.usersService.delete(id)
+  deleteUser(){
+    this.usersService.delete(this.id)
     .subscribe(
       response =>{
         this.showToast();

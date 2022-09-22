@@ -1,8 +1,10 @@
 import { Component, OnInit,AfterViewInit,ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { DialogBooksComponent } from '../dialog-books/dialog-books.component';
 import { Book } from '../models/book.model';
 import { IBooks } from '../models/ibooks';
 import { BooksService } from '../services/books.service';
@@ -14,27 +16,11 @@ import { BooksService } from '../services/books.service';
 })
 export class AdminPanelBooksComponent implements OnInit {
 
-  book: Book = {
-    title: '',
-    isbn: '',
-    synopsis: '',
-    author: '',
-    editorial: '',
-    user: {
-      id: '',
-      name: '',
-      email: '',
-      phone: '',
-      city: '',
-      username: '',
-      password: '',
-      role: '',
-    }
-  };
 
   ELEMENT_DATA!: IBooks[];
   displayedColumns: string[] = ['id', 'title', 'isbn','synopsis','action'];
   dataSource = new MatTableDataSource<IBooks>(this.ELEMENT_DATA);
+  id: any;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -43,7 +29,16 @@ export class AdminPanelBooksComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  constructor(private booksService: BooksService, private router: Router, private toastService: HotToastService) { }
+  constructor(private booksService: BooksService, private router: Router, private toastService: HotToastService, public dialog: MatDialog) { }
+
+  openDialog(id: any){
+    let dialogRef = this.dialog.open(DialogBooksComponent, {data: {idbook: id}});
+
+    dialogRef.afterClosed().subscribe(result =>{
+      this.id = result;
+      this.deleteBook();
+    });
+  }
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -54,8 +49,8 @@ export class AdminPanelBooksComponent implements OnInit {
     resp.subscribe(report=> this.dataSource.data = report as IBooks[]);
   }
 
-  deleteBook(id: any){
-    this.booksService.delete(id)
+  deleteBook(){
+    this.booksService.delete(this.id)
     .subscribe(
       response =>{
         this.showToast();

@@ -1,8 +1,10 @@
 import { Component, OnInit,AfterViewInit,ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
+import { DialogLoansComponent } from '../dialog-loans/dialog-loans.component';
 import { ILoans } from '../models/iloans';
 import { LoansService } from '../services/loans.service';
 
@@ -17,6 +19,7 @@ export class AdminPanelLoanComponent implements OnInit {
   ELEMENT_DATA!: ILoans[];
   displayedColumns: string[] = ['id', 'start', 'finish', 'valuation','comment','action'];
   dataSource = new MatTableDataSource<ILoans>(this.ELEMENT_DATA);
+  id: any;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -24,7 +27,16 @@ export class AdminPanelLoanComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-  constructor(private loanService: LoansService, private router: Router, private toastService: HotToastService) { }
+  constructor(private loanService: LoansService, private router: Router, private toastService: HotToastService, public dialog: MatDialog) { }
+
+openDialog(id: any){
+  let dialogRef = this.dialog.open(DialogLoansComponent, {data: {idloan: id}});
+
+  dialogRef.afterClosed().subscribe(result =>{
+    this.id = result;
+    this.deleteLoan();
+  });
+}
 
   ngOnInit(): void {
     this.getAllLoans();
@@ -35,8 +47,8 @@ export class AdminPanelLoanComponent implements OnInit {
     resp.subscribe(report => this.dataSource.data = report as ILoans[]);
   }
 
-  deleteLoan(id: any){
-    this.loanService.delete(id)
+  deleteLoan(){
+    this.loanService.delete(this.id)
     .subscribe(
       response =>{
         this.showToast();

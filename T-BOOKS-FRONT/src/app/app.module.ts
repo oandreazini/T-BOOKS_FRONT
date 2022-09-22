@@ -28,7 +28,10 @@ import { ModBooksComponent } from './mod-books/mod-books.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModUsersComponent } from './mod-users/mod-users.component';
 import { HotToastModule } from '@ngneat/hot-toast';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { DialogBooksComponent } from './dialog-books/dialog-books.component';
+import { DialogLoansComponent } from './dialog-loans/dialog-loans.component';
 
 @NgModule({
   declarations: [
@@ -49,8 +52,12 @@ import { HotToastModule } from '@ngneat/hot-toast';
     WriteCommentComponent,
     ModBooksComponent,
     ModLoanComponent,
-    ModUsersComponent
+    ModUsersComponent,
+    DialogExampleComponent,
+    DialogBooksComponent,
+    DialogLoansComponent
   ],
+  entryComponents: [DialogExampleComponent, DialogBooksComponent, DialogLoansComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -59,7 +66,8 @@ import { HotToastModule } from '@ngneat/hot-toast';
     MatTableModule,
     HttpClientModule,
     FormsModule,
-    HotToastModule.forRoot()
+    HotToastModule.forRoot(),
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
