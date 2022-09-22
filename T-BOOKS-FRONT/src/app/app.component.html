@@ -41,7 +41,7 @@
 
                 <li class="nav-item dropdown ms-3" *ngIf="isLoggedIn">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="bi bi-person-circle c-white fa-lg"></i>
+                        <i class="bi bi-person-circle c-white fa-lg"></i> {{user}}
                     </a>
                     <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" routerLink="/adminPanelUsers" *ngIf="role == 'ROLE_ADMIN'">Panel de
