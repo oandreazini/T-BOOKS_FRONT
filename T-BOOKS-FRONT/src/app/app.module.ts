@@ -32,6 +32,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { DialogBooksComponent } from './dialog-books/dialog-books.component';
 import { DialogLoansComponent } from './dialog-loans/dialog-loans.component';
+import { DialogMybooksComponent } from './dialog-mybooks/dialog-mybooks.component';
 
 @NgModule({
   declarations: [
@@ -55,9 +56,10 @@ import { DialogLoansComponent } from './dialog-loans/dialog-loans.component';
     ModUsersComponent,
     DialogExampleComponent,
     DialogBooksComponent,
-    DialogLoansComponent
+    DialogLoansComponent,
+    DialogMybooksComponent
   ],
-  entryComponents: [DialogExampleComponent, DialogBooksComponent, DialogLoansComponent],
+  entryComponents: [DialogExampleComponent, DialogBooksComponent, DialogLoansComponent, DialogMybooksComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
