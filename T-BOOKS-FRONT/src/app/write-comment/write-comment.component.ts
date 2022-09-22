@@ -23,22 +23,19 @@ export class WriteCommentComponent implements OnInit {
       city: '',
       username: '',
       password: '',
-      role: '',
+      roles: {
+        id: '',
+        name: '',
+      },
     },
     book: {
       id: '',
       title: '',
       isbn: '',
       synopsis: '',
-      author: {
-        id: '',
-        nameSurname: '',
-      },
-      editorial: {
-        id: '',
-        name: '',
-      },
-      user: {
+      author: '',
+      editorial: '',
+      usuario: {
         id: '',
         name: '',
         email: '',
@@ -46,9 +43,12 @@ export class WriteCommentComponent implements OnInit {
         city: '',
         username: '',
         password: '',
-        role: '',
-      }
-    }
+        roles: {
+          id: '',
+          name: '',
+        },
+      },
+    },
   };
   message = '';
 
@@ -67,7 +67,7 @@ export class WriteCommentComponent implements OnInit {
     .subscribe(
       data => {
         this.loan = data;
-        console.log(data);
+        // console.log(data);
       },
       error => {
         console.log(error);

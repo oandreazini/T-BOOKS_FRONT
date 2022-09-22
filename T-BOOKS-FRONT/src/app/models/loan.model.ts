@@ -1,7 +1,8 @@
 export class Loan {
+
   id?: any;
-  start?: string;
-  finish?: string;
+  start?: any;
+  finish?: any;
   valuation?: any;
   comment?: string;
   user?: {
@@ -12,22 +13,19 @@ export class Loan {
     city?: string;
     username?: string;
     password?: string;
-    role?: string;
+    roles?: {
+      id?: any;
+      name?: string;
+    };
   };
   book?: {
     id?: any;
     title?: string;
     isbn?: string;
     synopsis?: string;
-    author?: {
-      id?: any;
-      nameSurname?: string;
-    };
-    editorial?: {
-      id?: any;
-      name?: string;
-    };
-    user?: {
+    author?: string;
+    editorial?: string;
+    usuario?: {
       id?: any;
       name?: string;
       email?: string;
@@ -35,7 +33,10 @@ export class Loan {
       city?: string;
       username?: string;
       password?: string;
-      role?: string;
+      roles?: {
+        id?: any;
+        name?: string;
+      };
     };
   };
 }
