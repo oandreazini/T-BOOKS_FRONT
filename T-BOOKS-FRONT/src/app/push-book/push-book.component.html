@@ -4,19 +4,19 @@
         <div class="col-md-8 col-sm-10">
             <div class="mb-3 mt-5">
                 <label for="titulo" class="form-label"><i class="bi bi-award"></i>  Título <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="titulo" placeholder="Añadir título" required [(ngModel)]="book.title">
+                <input type="text" class="form-control" id="titulo" required [(ngModel)]="book.title">
                 <p class="text-danger mb-3">{{message1}}</p>
             </div>
 
             <div class="mb-3">
                 <label for="isbn" class="form-label"><i class="bi bi-upc"></i>  ISBN <span class="text-danger">*</span></label>
-                <input type="text" id="isbn" class="form-control" placeholder="Añadir ISBN" required [(ngModel)]="book.isbn">
+                <input type="text" id="isbn" class="form-control" required [(ngModel)]="book.isbn">
                 <p class="text-danger mb-3">{{message2}}</p>
             </div>
 
             <div class="mb-3">
                 <label for="editorial" class="form-label"><i class="bi bi-pencil-square"></i>  Editorial <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="editorial" placeholder="Añadir editorial" required [(ngModel)]="book.editorial">
+                <input type="text" class="form-control" id="editorial" required [(ngModel)]="book.editorial">
                 <p class="text-danger mb-3">{{message3}}</p>
             </div>
 
@@ -27,7 +27,7 @@
 
             <div class="mb-3">
                 <label for="sinopsis" class="form-label"><i class="bi bi-file-text"></i>  Sinopsis <span class="text-danger">*</span></label>
-                <textarea type="text" class="form-control" id="sinopsis" placeholder="Añadir sinopsis" required [(ngModel)]="book.synopsis"></textarea>
+                <textarea type="text" class="form-control" id="sinopsis" required [(ngModel)]="book.synopsis"></textarea>
                 <p class="text-danger mb-3">{{message4}}</p>
             </div>
 

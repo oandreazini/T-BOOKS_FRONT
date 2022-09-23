@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user.model';
-import { UsersService } from '../services/users.service';
 import { AuthService } from '../_services/auth.service';
 import { HotToastService } from '@ngneat/hot-toast';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -47,10 +45,8 @@ export class RegisterComponent implements OnInit {
   found = false;
 
   constructor(
-    private userService: UsersService,
     private authService: AuthService,
-    private toastService: HotToastService,
-    private route: ActivatedRoute
+    private toastService: HotToastService
   ) {}
 
   ngOnInit(): void {}
@@ -58,7 +54,6 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     const { name, email, phone, city, username, password, role } = this.form;
 
-    console.log(this.form);
     if (this.validation == true) {
       this.authService
         .register(name, email, phone, city, username, password, role)
@@ -157,6 +152,5 @@ export class RegisterComponent implements OnInit {
       this.validation = true;
       this.onSubmit();
     }
-    console.log(this.validation + " validation");
   }
 }

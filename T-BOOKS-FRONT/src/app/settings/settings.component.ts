@@ -43,7 +43,6 @@ export class SettingsComponent implements OnInit {
     .subscribe(
       data => {
         this.user = data;
-        console.log(data);
       },
       error => {
         console.log(error);
@@ -53,7 +52,6 @@ export class SettingsComponent implements OnInit {
 
   updateUser(): void{
     this.message = '';
-
     this.userService.update(this.tokenStorage.getUser(), this.user).subscribe(
       response => {
         this.message = response.message ? response.message : "The status was updated successfully";
@@ -71,7 +69,7 @@ export class SettingsComponent implements OnInit {
   showToast() {
     this.toastService.show('Los cambios se han actualizado con éxito.', {
       position: 'top-right',
-      duration: 5000,
+      duration: 1000,
       style: {
         border: '1px solid #badbcc',
         background: '#d1e7dd',
@@ -82,28 +80,23 @@ export class SettingsComponent implements OnInit {
   }
 
   checkPassword() {
-    console.log("pass 1: "  + this.form.password);
-    console.log("pass 2: "  + this.form.newpassword);
-    console.log("pass 3: "  + this.form.newpasswordv);
 
     if(this.form.newpassword != this.form.newpasswordv && this.form.password != this.user.password){
       this.equals = false;
     } else {
+      this.user.password = this.form.newpassword;
       this.userService.updatePass(this.tokenStorage.getUser(), this.user).subscribe(
         response => {
           this.message = response.message ? response.message : "The status was updated successfully";
           this.showToast();
           setTimeout(() => {
             window.location.reload();
-          }, 10000);
-          console.log("new pass saved:");
-          console.log(this.user.password);
+          }, 1000);
         },
         error => {
           console.log(error);
         }
       );
     }
-    console.log(this.equals);
   }
 }

@@ -45,9 +45,7 @@ export class PushBookComponent implements OnInit {
     private toastService: HotToastService
   ) {}
 
-  ngOnInit(): void {
-    console.log(this.validation + ' inicio');
-  }
+  ngOnInit(): void {}
 
   saveBook(): void {
     let role = this.tokenStorage.getRoles();
@@ -83,9 +81,6 @@ export class PushBookComponent implements OnInit {
         ],
       },
     };
-
-    console.log('data to introduce: ');
-    console.log(data);
 
     if(this.validation === true){
     this.bookService.create(data).subscribe(
@@ -162,6 +157,5 @@ export class PushBookComponent implements OnInit {
       this.validation = true;
       this.saveBook();
     }
-    console.log(this.validation + ' validation');
   }
 }
