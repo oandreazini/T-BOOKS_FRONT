@@ -18,6 +18,7 @@ import { WriteCommentComponent } from './write-comment/write-comment.component';
 import { ModUsersComponent } from './mod-users/mod-users.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModBooksComponent } from './mod-books/mod-books.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -50,7 +51,8 @@ const routes: Routes = [
   },
   {
     path: 'books/:id',
-    component: InfoBookComponent
+    component: InfoBookComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',

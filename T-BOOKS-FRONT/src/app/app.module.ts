@@ -6,6 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //Components
 import { AppComponent } from './app.component';
@@ -23,16 +26,16 @@ import { PushBookComponent } from './push-book/push-book.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingsComponent } from './settings/settings.component';
 import { WriteCommentComponent } from './write-comment/write-comment.component';
-import { FormsModule } from '@angular/forms';
 import { ModBooksComponent } from './mod-books/mod-books.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModUsersComponent } from './mod-users/mod-users.component';
-import { HotToastModule } from '@ngneat/hot-toast';
-import {MatDialogModule} from '@angular/material/dialog';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { DialogBooksComponent } from './dialog-books/dialog-books.component';
 import { DialogLoansComponent } from './dialog-loans/dialog-loans.component';
 import { DialogMybooksComponent } from './dialog-mybooks/dialog-mybooks.component';
+
+//Guards
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -69,9 +72,9 @@ import { DialogMybooksComponent } from './dialog-mybooks/dialog-mybooks.componen
     HttpClientModule,
     FormsModule,
     HotToastModule.forRoot(),
-    MatDialogModule
+    MatDialogModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

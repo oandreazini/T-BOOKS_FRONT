@@ -14,12 +14,15 @@ export class TokenStorageService {
 
   signOut(): void {
     window.sessionStorage.clear();
+    this.authService.unLogged();
   }
 
   public saveToken(token: string): void {
     console.log('saved Token: ' + token);
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
+    // And we set the variable of authService "userLogged to True"
+    this.authService.logged();
   }
 
   public getToken(): string | null {
