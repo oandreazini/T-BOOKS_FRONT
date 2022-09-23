@@ -1,38 +1,39 @@
 <div class="container my-md-4 bd-layout pb-5">
-  <form action="index.html" method="post">
-      <div class="row">
-          <div class="col-md-2 col-sm-1"></div>
-          <div class="col-md-8 col-sm-10">
-              <div class="mb-3 mt-5">
-                  <label for="titulo" class="form-label">Título <span class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="titulo" required>
-              </div>
+    <div class="row">
+        <div class="col-md-2 col-sm-1"></div>
+        <div class="col-md-8 col-sm-10">
+            <div class="mb-3 mt-5">
+                <label for="titulo" class="form-label"><i class="bi bi-award"></i>  Título <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="titulo" required [(ngModel)]="book.title">
+                <p class="text-danger mb-3">{{message1}}</p>
+            </div>
 
-              <div class="mb-3">
-                  <label for="isbn" class="form-label">ISBN <span class="text-danger">*</span></label>
-                  <input type="text" id="isbn" class="form-control" required>
-              </div>
+            <div class="mb-3">
+                <label for="isbn" class="form-label"><i class="bi bi-upc"></i>  ISBN <span class="text-danger">*</span></label>
+                <input type="text" id="isbn" class="form-control" required [(ngModel)]="book.isbn">
+                <p class="text-danger mb-3">{{message2}}</p>
+            </div>
 
-              <div class="mb-3">
-                  <label for="editorial" class="form-label">Editorial <span
-                          class="text-danger">*</span></label>
-                  <input type="text" class="form-control" id="editorial" required>
-              </div>
+            <div class="mb-3">
+                <label for="editorial" class="form-label"><i class="bi bi-pencil-square"></i>  Editorial <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="editorial" required [(ngModel)]="book.editorial">
+                <p class="text-danger mb-3">{{message3}}</p>
+            </div>
 
-              <div class="mb-3">
-                  <label for="autor" class="form-label">Autor <span class="text-danger"></span></label>
-                  <input type="text" class="form-control" id="autor">
-              </div>
+            <div class="mb-3">
+                <label for="autor" class="form-label"><i class="bi bi-person"></i>  Autor <span class="text-danger"></span></label>
+                <input type="text" class="form-control" id="autor" [(ngModel)]="book.author">
+            </div>
 
-              <div class="mb-3">
-                  <label for="sinopsis" class="form-label">Sinopsis <span class="text-danger">*</span></label>
-                  <textarea type="text" class="form-control" id="sinopsis" required></textarea>
-              </div>
+            <div class="mb-3">
+                <label for="sinopsis" class="form-label"><i class="bi bi-file-text"></i>  Sinopsis <span class="text-danger">*</span></label>
+                <textarea type="text" class="form-control" id="sinopsis" required [(ngModel)]="book.synopsis"></textarea>
+                <p class="text-danger mb-3">{{message4}}</p>
+            </div>
 
-              <p class="mb-4"> <span class="text-danger">*</span> Campo Obligatorio</p>
-              <button class="btn btn-pink rounded-1 ">Subir</button>
-          </div>
-          <div class="col-md-2 col-sm-1"></div>
-      </div>
-  </form>
+            <p class="mb-4"> <span class="text-danger">*</span> Campo Obligatorio</p>
+            <button class="btn btn-pink rounded-1 " (click)="validateForm()">Subir</button>
+        </div>
+        <div class="col-md-2 col-sm-1"></div>
+    </div>
 </div>

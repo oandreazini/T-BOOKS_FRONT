@@ -1,0 +1,37 @@
+<div class="container my-md-4 pb-5 mb-5">
+    <div class="row">
+        <div class="col-md-2 col-sm-1"></div>
+
+        <div class="col-md-8 col-sm-10">
+            <div class="mb-2 mt-4">
+                <label for="titulo" class="form-label"><i class="bi bi-award"></i> Título</label>
+                <input type="text" class="form-control" id="titulo" required [(ngModel)]="book.title" />
+            </div>
+
+            <div class="mb-2 mt-4">
+                <label for="isbn" class="form-label"><i class="bi bi-upc"></i> ISBN</label>
+                <input type="text" class="form-control" id="isbn" required [(ngModel)]="book.isbn" />
+                <p class="text-danger mb-3">{{message1}}</p>
+            </div>
+
+            <div class="mb-2 mt-4">
+                <label for="editorial" class="form-label"><i class="bi bi-pencil-square"></i> Editorial</label>
+                <input type="text" class="form-control" id="editorial" required [(ngModel)]="book.editorial" />
+            </div>
+
+            <div class="mb-2 mt-4">
+                <label for="autor" class="form-label"><i class="bi bi-person"></i> Autor</label>
+                <input type="text" class="form-control" id="autor" required [(ngModel)]="book.author" />
+            </div>
+
+            <div class="mb-2 mt-4">
+                <label for="sinopsis" class="form-label"><i class="bi bi-file-text"></i> Sinopsis</label>
+                <textarea type="text" class="form-control" id="sinopsis" required [(ngModel)]="book.synopsis"></textarea>
+            </div>
+
+            <button class="btn btn-pink rounded-1 mt-4" (click)="validateForm()">Guardar</button>
+        </div>
+
+        <div class="col-md-2 col-sm-1"></div>
+    </div>
+</div>

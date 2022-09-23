@@ -1,19 +1,39 @@
 <div class="container-books">
-  <p class="fs-1 text-pink mb-2">Libros disponibles</p>
-  <hr class="mt-0 mb-4">
-  <div class="row">
-    <div class="col" *ngFor="let book of books">
-      <div class="card" style="width: 15rem">
-        <img src="https://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">{{book.title}}</h5>
-          <hr class="mt-0">
-          <p class="card-text mb-1">{{book.author.nameSurname}}</p>
-          <p class="card-text mb-1">{{book.editorial.name}}</p>
-          <p class="card-text">{{book.isbn}}</p>
-          <a href="/T-BOOKS-FRONT/src/app/info-book/info-book.component.html" class="btn btn-pink">Más info</a>
+    <p class="fs-1 text-pink mb-2">Libros disponibles</p>
+    <hr class="mt-0 mb-4">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Introduce el título, el autor o el ISBN del libro" [(ngModel)]="search" />
+        <div class="input-group-append">
+            <button class="btn btn-pink ms-5" type="button" (click)="searchName()" (click)="searchAuthor()" (click)="searchIsbn()">Búsqueda</button>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="row mb-5">
+        <div class="col" *ngFor="let book of books">
+            <div class="card" style="width: 15rem">
+                <img src="https://covers.openlibrary.org/b/isbn/{{book.isbn}}-M.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{book.title}}</h5>
+                    <hr class="mt-0">
+                    <p class="card-text mb-1">{{book.author}}</p>
+                    <p class="card-text mb-1">{{book.editorial}}</p>
+                    <p class="card-text">{{book.isbn}}</p>
+                    <a routerLink="/books/{{book.id}}" class="btn btn-pink">Más info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination d-flex justify-content-center">
+            <li class="page-item me-3">
+                <a class="page-link px-3" (click)="page(this.currentPage-1)" aria-label="Previous">
+                    <span aria-hidden="true">&#60;</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link px-3" (click)="page(this.currentPage+1)" aria-label="Next">
+                    <span aria-hidden="true">&#62;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>
