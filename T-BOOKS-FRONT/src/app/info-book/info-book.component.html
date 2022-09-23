@@ -1,22 +1,27 @@
 <div class="container my-md-4 pb-5 mb-5">
-  <h2 class="pt-2">Propietario: Roger Rubio</h2>
-  <hr class="px-0 me-5">
-  <div class="row mt-4">
-      <div class="col-md-6 col-sm-12">
+    <h2 class="pt-2"><i class="bi bi-person"></i> Propietario: {{data.usuario.name}}</h2>
+    <h5><i class="bi bi-envelope me-2 ms-1"></i> Correo electrónico: {{data.usuario.email}}</h5>
+    <hr class="px-0 me-5">
+    <div class="row mt-4">
+        <div class="col-md-6 col-sm-12">
 
-          <img src="https://covers.openlibrary.org/b/isbn/9780439362139-L.jpg" alt="harry harry-potter-piedra-filosofal-minalima-portada">
-      </div>
+            <img src="https://covers.openlibrary.org/b/isbn/{{data.isbn}}-L.jpg" alt="{{data.title}}">
+        </div>
 
-      <div class="col-md-6 col-sm-6">
-          <p class="fs-4 mb-2">Harry Potter y la piedra filosofal</p>
-          <hr class="mt-0 me-4">
-          <p class="mb-1"><span class="fw-bold">Editorial:</span> salamandra</p>
-          <p class="mb-1"><span class="fw-bold"> Autor:</span> J.K. Rowling</p>
-          <p><span class="fw-bold"> ISBN:</span> 9780439362139</p>
-          <span class="fw-bold"> Sinopsis:</span>
-          <p>El día en que cumple once años, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. Deberá acudir entonces a una famosa escuela de magia y hechicería: Howards.</p>
+        <div class="col-md-6 col-sm-6">
+            <p class="fs-4 mb-2">{{data.title}}</p>
+            <hr class="mt-0 me-4">
+            <p class="mb-1"><span class="fw-bold"> Editorial:</span> {{data.editorial}}</p>
+            <p class="mb-1"><span class="fw-bold"> Autor:</span> {{data.author}}</p>
+            <p><span class="fw-bold"> ISBN:</span> {{data.isbn}}</p>
+            <span class="fw-bold"> Sinopsis:</span>
+            <p>{{data.synopsis}}</p>
 
-          <a href="#" class="btn btn-pink mt-4">Pedir prestado</a>
-      </div>
-  </div>
+            <button class="btn btn-pink mt-4" (click)="saveLoan()">Pedir prestado</button>
+            <p class="text-secondary fst-italic mt-3 fs-6">El préstamo comenzará el mismo día que se pida prestado y se enviará inmediatamente a la biblioteca principal de tu ciudad.</p>
+        </div>
+    </div>
 </div>
+
+<app-comments></app-comments>
+<app-write-comment></app-write-comment>
