@@ -10,7 +10,7 @@
                     <label for="usuario" class="form-label">Usuario</label>
                     <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required #username="ngModel" id="usuario" />
                     <div class="alert alert-danger" role="alert" *ngIf="username.errors && f.submitted">
-                        Username is required!
+                        Es necesario el usuario.
                     </div>
                 </div>
                 <div class="mb-3">
@@ -18,7 +18,7 @@
                     <input type="password" id="password" name="password" [(ngModel)]="form.password" required #password="ngModel" class="form-control" />
                 </div>
                 <button class="btn btn-pink rounded-1 ">Login</button>
-                <p class="mb-6 p-3">¿Todavía no tienes cuenta? <a href="register.html">Regístrate ahora</a></p>
+                <p class="mb-6 p-3">¿Todavía no tienes cuenta? <a routerLink="/register">Regístrate ahora</a></p>
 
                 <div class="form-group">
                     <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">

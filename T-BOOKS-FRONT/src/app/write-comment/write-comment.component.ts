@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Loan } from '../models/loan.model';
 import { LoansService } from '../services/loans.service';
@@ -7,7 +8,7 @@ import { TokenStorageService } from '../_services/token-storage.service';
 @Component({
   selector: 'app-write-comment',
   templateUrl: './write-comment.component.html',
-  styleUrls: ['./write-comment.component.css']
+  styleUrls: ['./write-comment.component.css'],
 })
 export class WriteCommentComponent implements OnInit {
   loan: Loan = {
@@ -23,10 +24,12 @@ export class WriteCommentComponent implements OnInit {
       city: '',
       username: '',
       password: '',
-      roles: [{
-        id: '',
-        name: '',
-      }],
+      roles: [
+        {
+          id: '',
+          name: '',
+        },
+      ],
     },
     book: {
       id: '',
@@ -43,32 +46,80 @@ export class WriteCommentComponent implements OnInit {
         city: '',
         username: '',
         password: '',
-        roles: [{
-          id: '',
-          name: '',
-        }],
+        roles: [
+          {
+            id: '',
+            name: '',
+          },
+        ],
       },
     },
   };
   message = '';
+  idbook: any;
 
+  loans: any;
+  loanUser: any;
+  loanID: any;
 
-  constructor(private loanService: LoansService, private tokenStorage: TokenStorageService, private toastService: HotToastService) { }
-
+  constructor(
+    private loanService: LoansService,
+    private tokenStorage: TokenStorageService,
+    private toastService: HotToastService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.idbook = this.route.snapshot.paramMap.get('id');
+
     this.message = '';
-    console.log("id: " + this.tokenStorage.getUser());
-    this.getLoan(this.tokenStorage.getUser());
+
+    this.getLoanByUser(this.tokenStorage.getUser());
+    this.getLoansByBook(this.idbook);
+
+    // console.log("id: " + this.tokenStorage.getUser());
   }
 
-  getLoan(id:any): void{
-    this.loanService.returnLoanById(id)
-    .subscribe(
-      data => {
-        this.loan = data;
+  checkLoan(): void {
+    for (let i = 0; i <= this.loans.length; i++) {
+      //  console.log(this.loans[i].id);
+      if (this.loans[i].usuario.id == this.loanUser[i].usuario.id) {
+        this.loanID = this.loans[i].id;
+      }
+    }
+  }
+
+  getLoanByUser(id: any): void {
+    this.loanService.returnLoanByUser(id).subscribe(
+      (data) => {
+        this.loanUser = data;
       },
-      error => {
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  getLoansByBook(id: any): void {
+    this.loanService.returnLoanByBook(id).subscribe(
+      (data) => {
+        this.loans = data;
+        this.checkLoan();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  getLoan(id: any): void {
+    this.loanService.returnLoanById(id).subscribe(
+      (data) => {
+        this.loan = data;
+        // console.log("data");
+        // console.log(this.loan);
+      },
+      (error) => {
         console.log(error);
       }
     );
@@ -76,8 +127,12 @@ export class WriteCommentComponent implements OnInit {
 
   updateLoan(): void {
     this.message = '';
+    // this.getLoan(this.loanID);
+    console.log(this.loanID);
 
-    this.loanService.update(this.loan.id, this.loan)
+     this.getLoan(this.loanID);
+    console.log(this.loan);
+    this.loanService.update(this.loanID, this.loan)
     .subscribe(
       response =>{
         this.message = response.message ? response.message : "The status was updated successfully";
@@ -104,5 +159,4 @@ export class WriteCommentComponent implements OnInit {
       },
     });
   }
-
 }

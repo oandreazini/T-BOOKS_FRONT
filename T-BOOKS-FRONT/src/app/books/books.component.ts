@@ -15,7 +15,7 @@ export class BooksComponent implements OnInit {
   currentBooks: Book = {};
   currentIndex = -1;
   search = '';
- 
+
   constructor(private booksService: BooksService) {}
 
   ngOnInit() {
@@ -23,7 +23,6 @@ export class BooksComponent implements OnInit {
     .subscribe(
       result => {
         this.books = result;
-        console.log(this.books);
       },
       error => {
         console.log(error);
@@ -39,7 +38,6 @@ export class BooksComponent implements OnInit {
     .subscribe(
       data => {
         this.books = data;
-        console.log(data);
       },
       error => {
         console.log(error);
@@ -54,7 +52,6 @@ export class BooksComponent implements OnInit {
     .subscribe(
       data => {
         this.books = data;
-        console.log(data);
       },
       error => {
         console.log(error);
@@ -69,7 +66,6 @@ export class BooksComponent implements OnInit {
     .subscribe(
       data => {
         this.books = data;
-        console.log(data);
       },
       error => {
         console.log(error);

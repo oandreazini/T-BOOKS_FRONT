@@ -59,7 +59,7 @@ export class ModBooksComponent implements OnInit {
     this.message = '';
 
     this.book.isbn = this.book.isbn?.replace(/-/g, '');
-   
+
     if (this.validation === true) {
       this.bookService.update(this.book.id, this.book).subscribe(
         (response) => {
@@ -102,13 +102,12 @@ export class ModBooksComponent implements OnInit {
       if (ISBN_REGEX.test(this.book.isbn?.toString()!)) {
         this.message1 = '';
       } else {
-        this.message1 = 'El isbn no coincide';
+        this.message1 = 'El ISBN no coincide.';
       }
     }
     if (this.message1 === '') {
       this.validation = true;
       this.updateBook();
     }
-    console.log(this.validation + ' validation');
   }
 }

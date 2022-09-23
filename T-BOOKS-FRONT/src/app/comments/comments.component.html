@@ -3,7 +3,7 @@
     <hr class="px-0 me-5">
 
     <div class="mb-5" *ngFor="let loan of loans">
-        <div *ngIf="loan.comment != null">
+        <div *ngIf="loan.valuation!= null">
             <p class="fw-bold mb-0">{{loan.usuario.name}}</p>
             <p *ngIf="loan.valuation == 5"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></p>
             <p *ngIf="loan.valuation == 4"><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i></p>

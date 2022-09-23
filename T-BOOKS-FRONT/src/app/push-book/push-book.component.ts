@@ -119,22 +119,22 @@ export class PushBookComponent implements OnInit {
 
     if (this.validation === false) {
       if (this.book.title === '' || this.book.title === null) {
-        this.message1 = 'Introduzca un título';
+        this.message1 = 'Introduzca un título.';
       } else {
         this.message1 = '';
       }
       if (this.book.isbn === '' || this.book.isbn === null) {
-        this.message2 = 'Introduzca un isbn';
+        this.message2 = 'Introduzca un ISBN.';
       } else{
         this.message2 = '';
       }
       if (ISBN_REGEX.test(this.book.isbn?.toString()!)) {
          this.message2 = '';
       } else {
-       this.message2 = 'El isbn no coincide';
+       this.message2 = 'El ISBN no coincide.';
       }
       if (this.book.editorial === '' || this.book.editorial === null) {
-        this.message3 = 'Introduzca una editorial';
+        this.message3 = 'Introduzca una editorial.';
       } else {
         this.message3 = '';
       }
@@ -142,7 +142,7 @@ export class PushBookComponent implements OnInit {
         this.book.author = "Anónimo";
       }
       if (this.book.synopsis === '' || this.book.synopsis === null) {
-        this.message4 = 'Introduzca una sinopsis';
+        this.message4 = 'Introduzca una sinopsis.';
       } else {
         this.message4 = '';
       }

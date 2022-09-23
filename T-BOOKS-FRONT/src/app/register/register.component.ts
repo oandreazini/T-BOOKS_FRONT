@@ -99,43 +99,43 @@ export class RegisterComponent implements OnInit {
 
     if (this.validation === false) {
       if (this.form.username === null || this.form.username == "") {
-        this.message1 = 'Introduzca un nombre de usuario';
+        this.message1 = 'Introduzca un nombre de usuario.';
       } else {
         this.message1 = '';
       }
       if (this.form.password === null || this.form.password == "") {
-        this.message2 = 'Introduzca una contraseña';
+        this.message2 = 'Introduzca una contraseña.';
       } else {
         this.message2 = '';
       }
       if (this.form.password !== this.form.vpassword) {
-        this.message7 = 'La contraseña no coincide';
+        this.message7 = 'La contraseña no coincide.';
       } else {
         this.message7 = '';
       }
       if (this.form.name === null || this.form.name ==  "") {
-        this.message3 = 'Introduzca un nombre';
+        this.message3 = 'Introduzca un nombre.';
       } else {
         this.message3 = '';
       }
       if (this.form.email === null || this.form.email == "") {
-        this.message4 = 'Introduzca un correo';
+        this.message4 = 'Introduzca un correo electrónico.';
       }
       if (EMAIL_REGEX.test(this.form.email)) {
         this.message4 = '';
       } else {
-        this.message4 = 'El correo es incorrecto';
+        this.message4 = 'El correo electrónico es incorrecto.';
       }
       if (this.form.phone === null || this.form.phone == "") {
-        this.message5 = 'Introduzca un número de teléfono';
+        this.message5 = 'Introduzca un número de teléfono.';
       }
       if (PHONE_REGEX.test(this.form.phone)) {
         this.message5 = '';
       } else {
-        this.message5 = 'El télefono es incorrecto';
+        this.message5 = 'El número de télefono es incorrecto.';
       }
       if (this.form.city === null || this.form.city == "") {
-        this.message6 = 'Introduzca un ciudad';
+        this.message6 = 'Introduzca un ciudad.';
       } else {
         this.message6 = '';
       }

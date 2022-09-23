@@ -36,6 +36,7 @@ import { DialogMybooksComponent } from './dialog-mybooks/dialog-mybooks.componen
 
 //Guards
 import { AuthGuard } from './guards/auth.guard';
+import { DialogAlertComponent } from './dialog-alert/dialog-alert.component';
 
 @NgModule({
   declarations: [
@@ -60,9 +61,10 @@ import { AuthGuard } from './guards/auth.guard';
     DialogExampleComponent,
     DialogBooksComponent,
     DialogLoansComponent,
-    DialogMybooksComponent
+    DialogMybooksComponent,
+    DialogAlertComponent
   ],
-  entryComponents: [DialogExampleComponent, DialogBooksComponent, DialogLoansComponent, DialogMybooksComponent],
+  entryComponents: [DialogExampleComponent, DialogBooksComponent, DialogLoansComponent, DialogMybooksComponent, DialogAlertComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

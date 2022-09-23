@@ -31,7 +31,6 @@ export class ModLoanComponent implements OnInit {
     .subscribe(
       data => {
         this.loan = data;
-        console.log(data);
       },
       error => {
         console.log(error);

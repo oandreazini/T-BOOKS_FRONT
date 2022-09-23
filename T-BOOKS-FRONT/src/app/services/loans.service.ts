@@ -35,4 +35,8 @@ export class LoansService {
   returnLoanByBook(id: any): Observable<Loan[]> {
     return this.http.get<Loan[]>(`${baseUrl}/book/${id}`);
   }
+
+  returnLoanByUser(id: any): Observable<Loan[]> {
+    return this.http.get<Loan[]>(`${baseUrl}/usuario/${id}`);
+  }
 }
