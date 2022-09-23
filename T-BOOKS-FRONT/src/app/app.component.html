@@ -1,0 +1,83 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light shadow bg-pink">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="./assets/img/t-books.png" alt="T-Books" width="130px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item mx-3 me-1">
+                    <a class="nav-link text-light lh-lg focus" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light lh-lg focus" href="#">Libros</a>
+                </li>
+            </ul>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ms-auto">
+                <form class="d-flex">
+                    <input class="form-control me-2 py-1" type="search" placeholder="Búsqueda" aria-label="Búsqueda">
+                    <button class="btn p-0" type="submit">
+            <i class="bi bi-search c-white fa-lg"></i>
+          </button>
+                </form>
+
+                <li class="nav-item dropdown ms-3">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="bi bi-person-circle c-white fa-lg"></i>
+                    </a>
+
+                    <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="book_upload.html">Mis libros</a></li>
+                        <li><a class="dropdown-item" href="uploadBook.html">Subir libro</a></li>
+                        <li><a class="dropdown-item" href="settings.html">Ajustes</a></li>
+                        <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+
+
+
+<app-login></app-login>
+
+
+
+
+
+<!-- FOOTER -->
+<footer class=" py-3 px-5 mt-4 bg-gray ">
+    <ul class="nav justify-content-center pb-3 mb-3 ">
+        <li class="nav-item "><a href="https://twitter.com/tsystemsCom " class="nav-link px-2 text-light "><i
+    class="bi bi-twitter i-lg ml-50 "></i></a></li>
+        <li class="nav-item "><a href="https://www.linkedin.com/company/t-systems/ " class="nav-link px-2 text-light "><i class="bi bi-linkedin i-lg ml-50 "></i></a></li>
+        <li class="nav-item "><a href="https://www.youtube.com/user/TSystemsINT " class="nav-link px-2 text-light "><i
+    class="bi bi-youtube i-lg ml-50 "></i></a></li>
+    </ul>
+    <hr class="bg-white ">
+    <div class="pb-5 ">
+        <a href="https://www.t-systems.com/de/en "><img src="./assets/img/logo-t-systems-white.svg-data.svg " alt="logo-t-systems-white " width="15% "></a>
+        <img src="./assets/img/logo-t-systems-claim-white.svg-data.svg " alt="logo-t-systems-claim-white " width="15% " class="float-end ">
+    </div>
+    <p class="text-start text-light fs-7 ">© 2022 T-Systems International GmbH. All rights reserved.</p>
+</footer>
+<!-- END FOOTER -->
+
+
+
+<router-outlet></router-outlet>
