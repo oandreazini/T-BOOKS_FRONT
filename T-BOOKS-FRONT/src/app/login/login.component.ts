@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
         .getRoles()
         ?.toString()
         .replace(/['"]+/g, '');
-      console.log('roles: ' + this.roles);
     }
   }
 

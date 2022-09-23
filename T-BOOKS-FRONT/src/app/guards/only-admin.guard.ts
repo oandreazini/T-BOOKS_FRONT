@@ -5,20 +5,20 @@ import { TokenStorageService } from '../_services/token-storage.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuard implements CanActivate {
+export class OnlyAdminGuard implements CanActivate {
   constructor(
     private router: Router,
     private tokenStorage: TokenStorageService
   ) {}
 
   canActivate(): boolean {
-    if (!!this.tokenStorage.getRoles()) {
+    if (this.tokenStorage.getRoles() == '"ROLE_ADMIN"') {
       return true;
     } else {
       window.alert(
-        'No tienes permiso para acceder aquí. Porfavor, ingresa con tu cuenta.'
+        'No tienes los permisos necesarios para acceder a este sitio.'
       );
-      this.router.navigate(['/login']);
+      this.router.navigate(['']);
       return false;
     }
   }

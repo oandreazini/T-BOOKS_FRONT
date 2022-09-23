@@ -19,6 +19,7 @@ import { ModUsersComponent } from './mod-users/mod-users.component';
 import { ModLoanComponent } from './mod-loan/mod-loan.component';
 import { ModBooksComponent } from './mod-books/mod-books.component';
 import { AuthGuard } from './guards/auth.guard';
+import { OnlyAdminGuard } from './guards/only-admin.guard';
 
 const routes: Routes = [
   {
@@ -31,23 +32,28 @@ const routes: Routes = [
   },
   {
     path: 'adminPanelBooks',
-    component: AdminPanelBooksComponent
+    component: AdminPanelBooksComponent,
+    canActivate: [OnlyAdminGuard]
   },
   {
     path: 'adminPanelLoan',
-    component: AdminPanelLoanComponent
+    component: AdminPanelLoanComponent,
+    canActivate: [OnlyAdminGuard]
   },
   {
     path: 'adminPanelUsers',
-    component: AdminPanelUsersComponent
+    component: AdminPanelUsersComponent,
+    canActivate: [OnlyAdminGuard]
   },
   {
     path: 'bookUpload',
-    component: BookUploadComponent
+    component: BookUploadComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'comments',
-    component: CommentsComponent
+    component: CommentsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'books/:id',
@@ -60,7 +66,8 @@ const routes: Routes = [
   },
   {
     path: 'pushBook',
-    component: PushBookComponent
+    component: PushBookComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'register',
@@ -68,23 +75,28 @@ const routes: Routes = [
   },
   {
     path: 'settings',
-    component: SettingsComponent
+    component: SettingsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'writeComment',
-    component: WriteCommentComponent
+    component: WriteCommentComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'mod_books/:id',
-    component: ModBooksComponent
+    component: ModBooksComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'mod_loan/:id',
-    component: ModLoanComponent
+    component: ModLoanComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'mod_users/:id',
-    component: ModUsersComponent
+    component: ModUsersComponent,
+    canActivate: [AuthGuard]
   },
 ];
 
