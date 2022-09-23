@@ -47,4 +47,12 @@ export class BooksService {
   getByIsbn(isbn: any): Observable<Book[]>{
     return this.http.get<Book[]>(`${baseUrl}/isbn/${isbn}`)
   }
+
+  getPageBooks(): Observable<any>{
+    return this.http.get<any>(`https://rts-tbooks-bbdd.herokuapp.com/bookspage`);
+  }
+
+  getPage(p: any): Observable<any>{
+    return this.http.get<any>(`https://rts-tbooks-bbdd.herokuapp.com/bookspage?sortBy=id&page=${p}`);
+  }
 }

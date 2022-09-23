@@ -22,4 +22,21 @@
       </div>
     </div>
   </div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="page(this.currentPage-1)" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" (click)="page(0)"><a class="page-link" >1</a></li>
+      <li class="page-item" (click)="page(1)"><a class="page-link" >2</a></li>
+      <li class="page-item" (click)="page(2)"><a class="page-link" >3</a></li>
+      <li class="page-item">
+        <a class="page-link" (click)="page(this.currentPage+1)" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
