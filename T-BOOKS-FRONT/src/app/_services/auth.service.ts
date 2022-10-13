@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const AUTH_API = 'https://rts-tbooks-bbdd.herokuapp.com/';
+const AUTH_API = 'http://tbooksback-env.eba-xdm3b3er.us-east-1.elasticbeanstalk.com/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'applicatoin/json' }),
