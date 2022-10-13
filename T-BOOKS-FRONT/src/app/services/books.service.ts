@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Book } from '../models/book.model';
 
-const baseUrl = "https://rts-tbooks-bbdd.herokuapp.com/books";
+const baseUrl = "http://tbooksback-env.eba-xdm3b3er.us-east-1.elasticbeanstalk.com/books";
 
 @Injectable({
   providedIn: 'root'
@@ -49,10 +49,10 @@ export class BooksService {
   }
 
   getPageBooks(): Observable<any>{
-    return this.http.get<any>(`https://rts-tbooks-bbdd.herokuapp.com/bookspage`);
+    return this.http.get<any>(`http://tbooksback-env.eba-xdm3b3er.us-east-1.elasticbeanstalk.com/bookspage`);
   }
 
   getPage(p: any): Observable<any>{
-    return this.http.get<any>(`https://rts-tbooks-bbdd.herokuapp.com/bookspage?sortBy=id&page=${p}`);
+    return this.http.get<any>(`http://tbooksback-env.eba-xdm3b3er.us-east-1.elasticbeanstalk.com/bookspage?sortBy=id&page=${p}`);
   }
 }

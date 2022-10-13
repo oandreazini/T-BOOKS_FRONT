@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Loan } from '../models/loan.model';
 
-const baseUrl = "https://rts-tbooks-bbdd.herokuapp.com/loans"
+const baseUrl = "http://tbooksback-env.eba-xdm3b3er.us-east-1.elasticbeanstalk.com/loans"
 
 @Injectable({
   providedIn: 'root'
